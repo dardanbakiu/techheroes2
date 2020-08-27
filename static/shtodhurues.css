@@ -1,0 +1,9 @@
+.box {
+    position: relative;
+    max-width: 500px;
+    max-height: 1100px;
+    padding: 50px;
+    background: rgba(255,255,255, .2);
+    border-style: solid;
+    border-radius: 25px;
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Dhuro gjak,shpëto jetë!</title>
+  <link href = "giveblood.png"  rel="icon" type="image/gif">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.couldflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="navAndFooter.css">
+  <link rel="stylesheet" href="profili.css">
+ 
+  <link href="style.css" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+</head>
+
+<body style="
+background-image:url('regjistrohu.jpg'); 
+background-color: rgba(255,255,255,0.2);
+background-blend-mode: lighten;
+background-repeat : no-repeat;
+background-size: cover;
+
+">
+  <%- include ('partials/navbar.ejs') %>
+
+
+<div class="container" style="padding-left: 360px;">
+ 
+  <div class="card" >
+    <form>
+      <center>
+        <div class="row">
+          
+          <div style="color-adjust: fixed;">
+            <img class="card-img-top" style="width: 200px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ8SyFsniTLCC5pw6Y_GFgRuLR6-b4fKGmmGhGgj4Jd0tTuosAI" alt="Card image">
+            <div class="card-img-overlay">
+              <h4 class="card-title">Emri: <%= emri %></h4>
+              <h4 class="card-title">Mbiemri: <%= mbiemri %></h4>
+              <h4 class="card-title">Kontakti: <%= kontakti %></h4>
+              <h4 class="card-title">Grupi i gjakut: <%= grgjakut %></h4>
+              <h4 class="card-title">Historia:  <%= historia %></h4>
+              
+
+            </div>
+          </div>
+        
+      </center>
+      </form>
+      </div>
+   
+    </div>
+      <br>
+      <br>
+      <br>
+      <br>
+
+
+        <!----------- Footer ------------>
+        <%- include ('partials/footer.ejs') %>
+     
+</body>
+
+</html>

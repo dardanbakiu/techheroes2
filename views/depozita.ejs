@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Dhuro gjak,shpëto jetë!</title>
+  <link href = "giveblood.png"  rel="icon" type="image/gif">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.couldflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="style.css" rel="stylesheet" />
+  <link rel="stylesheet" href="navAndFooter.css" >
+  <link rel="stylesheet" href="depozita.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+</head>
+
+<body style="
+  background-image:url('https://i.imgur.com/icByuBH.png'); 
+  background-color: rgba(255,255,255,0.2);
+  background-blend-mode: lighten;
+  background-repeat : no-repeat;
+  background-size: cover;
+  ">
+
+  <%- include ('partials/navbar.ejs') %>
+
+  <br> <br> <br> <br> <br> <br>  
+
+
+  <center>
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">
+              <h1>Njësia</h1>
+            </th>
+            <th scope="col">
+          
+           
+              <h1 style="color:Tomato;">A+</h1>
+           
+   
+        </th>
+            <th scope="col">
+              <h1 style="color:Tomato;">A-</h1>
+            </th>
+            <th scope="col">
+              <h1 style="color:Tomato;">B+</h1>
+            </th>
+            <th scope="col">
+              <h1 style="color:Tomato;">B-</h1>
+            </th>
+            <th scope="col">
+              <h1 style="color:Tomato;">AB+</h1>
+            </th>
+            <th scope="col">
+              <h1 style="color:Tomato;">AB-</h1>
+            </th>
+            <th scope="col">
+              <h1 style="color:Tomato;">O+</h1>
+            </th>
+            <th scope="col">
+              <h1 style="color:Tomato;">O-</h1>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">
+              <h1 style="color:Tomato;">ml</h1>
+            </th>
+            <td>
+              <h1><%= Apozitiv %></h1>
+            </td>
+            <td>
+              <h1><%= Anegativ %></h1>
+            </td>
+            <td>
+              <h1><%= Bpozitiv %></h1>
+            </td>
+            <td>
+              <h1><%= Bnegativ %></h1>
+            </td>
+            <td>
+              <h1><%= ABpozitiv %></h1>
+            </td>
+            <td>
+              <h1><%= ABnegativ %></h1>
+            </td>
+            <td>
+              <h1><%= Opozitiv %></h1>
+            </td>
+            <td>
+              <h1><%= Onegativ %></h1>
+            </td>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </center>
+<br> <br> <br> <br> <br> <br> <br>
+
+
+    <br><br><br><br><br><br><br>
+    <%- include ('partials/footer.ejs') %>
+
+  
+</body>
+
+</html>

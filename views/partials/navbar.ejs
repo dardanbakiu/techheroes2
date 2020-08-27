@@ -1,0 +1,104 @@
+<nav class="navbar navbar-default navbar-sticky-top " role="navigation">
+  <br>
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-main">
+
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><img width="30px" src="giveblood.png"></a>
+      <span class="navbar-text" style="font-size: medium;color:black ; ">Dhuro gjak,shpëto jetë!</span>
+    </div>
+    <div class="collapse navbar-collapse" id="navbar-collapse-main">
+      <a href="/"> <button type="button" class="btn btn-danger btn-default navbar-btn">Ballina</button> </a>
+
+      <ul class="nav navbar-nav navbar-right" href="/">
+
+        <% if (global.dhurues  == false)  { %>
+        <div class="btn-group ">
+          <button type="button " class="btn btn-default dropdown-toggle btn-danger" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Regjistrohu <span class="caret"></span>
+          </button>
+
+          
+          <ul class="dropdown-menu">
+            <% if (global.admin.logged == true)  { %>
+            <li><a href="/regjistrohu_si_administrator">Regjistrohu si administrator</a></li>
+            <% } %>
+            <li role="separator" class="divider"></li>
+            <% if (global.admin.logged == false){ %>
+            <li><a href="/regjistrohu_si_dhurues">Regjistrohu si dhurues</a></li>
+            <% } %>
+          </ul>
+         
+        </div>
+        <% } %>
+
+        <% if ((global.admin.logged == false) && (global.dhurues == false)){ %>
+        <div class="btn-group ">
+          <button type="button " class="btn btn-default dropdown-toggle btn-danger" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Kyçu <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a href="/kycu_admin">Kyçu si administrator</a></li>
+
+            <li role="separator" class="divider"></li>
+            <li><a href="/kycu_dhurues">Kyçu si dhurues</a></li>
+          </ul>
+        </div>
+        <% } %>
+        <% if ((global.admin.logged == true) && (global.dhurues == false))  { %>
+        <div class="btn-group">
+          <button type="button" class="btn btn-default btn-danger dropdown-toggle" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Dhuruesit e gjakut <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a href="/lista_dhuruesve">Lista e dhuruesve</a></li>
+
+            <li role="separator" class="divider"></li>
+            <li><a href="/shto_dhurues"> Shto dhurues</a></li>
+          </ul>
+        </div>
+
+
+        <div class="btn-group">
+          <button type="button" class="btn btn-default btn-danger dropdown-toggle" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Marrësit e gjakut <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a href="/lista_marresve"> Lista e marrësve</a></li>
+
+            <li role="separator" class="divider"></li>
+            <li><a href="/shto_marres"> Shto marrës</a></li>
+          </ul>
+        </div>
+        
+
+        <a href="/depozita"> <button type="button" class="btn btn-default btn-danger navbar-btn">Depozita</button></a>
+        <% } %>
+
+        <% if (global.dhurues  == true) { %>
+        <a href="/profili_dhuruesit"> <button type="button"
+            class="btn btn-default btn-danger navbar-btn">Profili</button> </a>
+        <% } %>
+
+          <% if ((global.admin.logged == true) || (global.dhurues == true)) { %>
+        <button type="submit" id="btnDil" class="btn btn-default  navbar-btn" form="formaDil"
+          value="Submit">Dil</button>
+
+        <form action="/dil" method="POST" id="formaDil"></form>
+        <% } %>
+      </ul>
+
+    </div>
+
+  </div>
+
+</nav>

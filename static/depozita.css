@@ -1,0 +1,10 @@
+
+.table {
+    border: 2px solid black;
+    border-collapse: separate;
+    width: fit-content;
+    height: fit-content;
+    background-color: white;
+    margin-left: 30px;
+  border-radius: 25px;
+  }

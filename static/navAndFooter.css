@@ -1,0 +1,36 @@
+
+             html, body{
+                height:100%;
+                width:100%;
+            }
+            
+            #btnDil {
+                background-color:black;
+                color:white;
+                border-radius:50px;
+            }
+            
+            .navbar{
+                background-color: white;
+               
+            }
+            .navbar-brand{
+                min-height: 30px;
+                padding: 10px 20px 5px;
+            
+            }
+            .navbar-default .navbar-nav li a{
+                color: #Dc143c;
+            }
+            .btn-danger {
+             border-radius: 20px;
+            }
+            .cnt{
+                background-color: black;
+                color: white;
+                border: solid;
+                width:fit-content;
+                text-align: center;
+                font-family: 'Times New Roman', Times, serif;
+                font-size: 15px;
+            }

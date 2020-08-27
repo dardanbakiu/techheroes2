@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Dhuro gjak,shpëto jetë!</title>
+  <link href = "giveblood.png"  rel="icon" type="image/gif">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.couldflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="navAndFooter.css">
+  <link href="style.css" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+</head>
+
+<body>
+  <%- include ('partials/navbar.ejs') %>
+  <center>
+    <br>
+    <div class="title" style="color:black;font-family: inherit;"> <h2>Lista e marrësve të gjakut</h2></div><br><br>
+    <div class="container">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col ">Nr</th>
+            <th scope="col">Emri</td>
+            <th scope="col">Mbiemri</td>
+            <th scope="col">Grupi i Gjakut</td>
+            <th scope="col">Sasia</td>
+          </tr>
+        </thead>
+        <tbody>
+          <% for (var i = 0; i < rows.length ; i++) { %>
+          <tr>
+            <th scope="row "><%= i+1 %></th>
+            <td><%= rows[i].emri %></td>
+            <td><%= rows[i].mbiemri %></td>
+            <td><%= rows[i].grgjakut %></td>
+            <td><%= rows[i].sasia %> rsml</td>
+          </tr>
+
+          <% } %>
+        </tbody>
+      </table>
+    </div>
+  </center>
+
+  <br>
+  <br>
+  <hr>
+  <br>
+  <br>
+  
+
+    <!----------- Footer ------------>
+    <%- include ('partials/footer.ejs') %>
+  
+</body>
+
+</html>

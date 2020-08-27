@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Dhuro gjak,shpëto jetë!</title>
+  <link href="giveblood.png" rel="icon" type="image/gif">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.couldflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="navAndFooter.css">
+  <link rel="stylesheet" href="shto.css">
+  <link href="style.css" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+</head>
+
+<body >
+  <%- include ('partials/navbar.ejs') %>
+
+    <center>
+      <div class="box">
+        <form method="POST" action="/shto_marres_form">
+         
+           
+          <div class="title" style="color:black;font-family: inherit;">
+            <h3>Shto marrës </h3>
+          </div>
+
+            <div class="row">
+              <div class="col-xl-9"></div>
+              <div class="col-xl-9">
+                <div class="form-group">
+                  <label for="usr">Emri:</label>
+                  <input type="text" style="width: 300px;" class="form-control" id="first_name" name="marres_emri">
+                </div>
+              </div>
+            </div>
+      
+              <div class="col-xl-9"></div>
+         
+            <div class="row">
+              <div class="col-xl-9">
+              <div class="col-xl-9">
+                <div class="form-group">
+                  <label for="usr">Mbiemri:</label>
+                  <input type="text" style="width: 300px;" class="form-control" id="last_name" name="marres_mbiemri">
+                </div>
+              
+               
+                <div class="form-group">
+                  <label for="usr">Grupi i gjakut:</label>
+                  <div class="form-check">
+                    <div class="col-sm-6">
+                      <label class="form-check-label">
+                        <input type="radio" class="form-check-input" value="A+" name="marres_gr_gjakut">A+
+                      </label>
+                    </div>
+                  
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input type="radio" class="form-check-input" value="A-" name="marres_gr_gjakut">A-
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <div class="col-md-6">
+                        <label class="form-check-label">
+                          <input type="radio" class="form-check-input" value="B+" name="marres_gr_gjakut">B+
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <div class="col-md-6">
+      
+                          <label class="form-check-label">
+                            <input type="radio" class="form-check-input" value="B-" name="marres_gr_gjakut">B-
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <div class="col-md-6">
+                            <label class="form-check-label">
+                              <input type="radio" class="form-check-input" value="AB+" name="marres_gr_gjakut">AB+
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <label class="form-check-label">
+                              <input type="radio" class="form-check-input" value="AB-" name="marres_gr_gjakut">AB-
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <div class="col-md-6">
+                              <label class="form-check-label">
+                                <input type="radio" class="form-check-input" value="O+" name="marres_gr_gjakut">O+
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <div class="col-md-6">
+                                <label class="form-check-label">
+      
+                                  <input type="radio" class="form-check-input" value="O-" name="marres_gr_gjakut">O-
+                                </label>
+                              </div>
+                            </div>
+                            <br>
+                            <br>
+                            <div class="form-group">
+                              <label for="last_name">Sasia e marrur (ml)</label>
+                              <input type="number" style="width: 300px;" class="form-control"  name="shto_marres_sasia">
+                            </div>
+      
+                              </div>
+                              <input type="Submit" value="Shto" style="width: 100px;" class="btn-danger " >
+          </center>
+          </fieldset>
+        </form>
+      </div>
+      </center>
+ 
+
+<br> <br> <br> <br> 
+  <!----------- Footer ------------>
+  <%- include ('partials/footer.ejs') %>
+
+</body>
+
+</html>
