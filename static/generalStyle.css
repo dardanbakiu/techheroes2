@@ -1,0 +1,42 @@
+.centerFlex {
+    display: flex;
+    justify-content: center;
+}
+
+.whiteText {
+    color: white;
+}
+
+.blackText {
+    color: black;
+}
+
+.font {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.padding {
+    padding:1%;
+}
+
+.paddingMedium {
+    padding:10%;
+}
+
+.margin {
+    margin: 0 10%;
+}
+
+.textMedium {
+    font-size: 150%;
+}
+
+.textHuge {
+    font-size: 200%;
+}
+
+
+.centerMargin {
+    width: 50%;
+    margin : 0 auto;
+}

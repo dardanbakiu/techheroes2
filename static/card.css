@@ -1,9 +1,10 @@
 .card{
-    position: relative;
-   width: 400px;
-   height: 400px;
-    padding: 50px;
     background: rgba(255,255,255, .2);
     box-shadow: 0 5px 15px rgba(230, 38, 38, 0.5);
     border-radius: 25px;
+}
+
+.card > img {
+    border-radius: 25px;
+    padding: 1%;
 }

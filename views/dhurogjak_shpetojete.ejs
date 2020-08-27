@@ -3,14 +3,24 @@
 
 <head>
   <title>Dhuro gjak,shpëto jetë!</title>
-  <link href = "giveblood.png"  rel="icon" type="image/gif">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.couldflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="navAndFooter.css" >
+  <link href="giveblood.png" rel="icon" type="image/gif">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- CSS only -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+  <!-- JS, Popper.js, and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="navAndFooter.css">
   <link rel="stylesheet" href="card.css">
+  <link rel="stylesheet" href="generalStyle.css">
   <link href="style.css" rel="stylesheet" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,9 +33,33 @@
 
   <%- include ('partials/navbar.ejs') %>
 
-  <br> <br> <br>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <img src="logo.png" alt="">
+      </div>
+      <div class="col-md-6">
+        <p class="textMedium">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum culpa quam alias dicta! Mollitia natus, ea blanditiis eos in rerum nisi, est sint maxime vitae iure vero neque quisquam exercitationem.</p>
+      </div>
+    </div>
 
-  <div class="padding">
+
+
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="https://healthcare.utah.edu/healthfeed/postings/2019/08/tattoo-removal.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Kush nuk mund te dhuroje gjak?</h5>
+        <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda quas reprehenderit iste dolorum expedita, ad eaque fuga nulla eveniet totam architecto necessitatibus nisi ullam incidunt obcaecati quae.</p>
+      </div>
+    </div>
+
+  
+
+  </div>
+
+
+
+  <!-- <div class="padding">
     <div class="container">
       <div class="row">
         <div class="col-sm-6">
@@ -100,11 +134,11 @@
         </div>
       </div>
 
-    </div>
+    </div> -->
 
-    <!----------- Footer ------------>
-    <%- include ('partials/footer.ejs') %>
-  
+  <!----------- Footer ------------>
+  <%- include ('partials/footer.ejs') %>
+
 </body>
 
 </html>

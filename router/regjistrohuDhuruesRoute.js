@@ -39,13 +39,7 @@ router.post("/user_reg", (req, res) => {
         .catch(err => {
             console.log(err);
         });
-
-
-
 });
 
-
-//func1 ()
-// func2()
 
 exports.route = router;
