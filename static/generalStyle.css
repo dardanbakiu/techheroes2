@@ -7,6 +7,10 @@
     color: white;
 }
 
+.redBG {
+    background-color:	#8C92AC;
+}
+
 .blackText {
     color: black;
 }
@@ -40,3 +44,12 @@
     width: 50%;
     margin : 0 auto;
 }
+
+
+/* per telefon */
+@media only screen and (max-width: 600px) {
+    .logo {
+      width: 30%;
+    }
+  }
+
