@@ -5,13 +5,25 @@
   <title>Dhuro gjak,shpëto jetë!</title>
   <link href="giveblood.png" rel="icon" type="image/gif">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.couldflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- Bootstrap4 -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="generalStyle.css">
+  <!-- / Boostrap4 -->
   <link rel="stylesheet" href="navAndFooter.css">
   <link rel="stylesheet" href="shto.css">
   <link href="style.css" rel="stylesheet" />
+  <link href="card.css" rel="stylesheet" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -19,11 +31,11 @@
 
 </head>
 
-<body >
+<body>
   <%- include ('partials/navbar.ejs') %>
-
+  <!-- 
     <center>
-      <div class="box">
+      <div class="box card">
         <form method="POST" action="/shto_marres_form">
          
            
@@ -120,7 +132,96 @@
       </center>
  
 
-<br> <br> <br> <br> 
+<br> <br> <br> <br>  -->
+
+<form>
+  <div class="center marginTB">
+    <div class="card box">
+  
+      <div class="center"><img width="50px" src="giveblood.png"></div>
+      <h2 class="center mb-5">Shto Marres</h2>
+
+      <div class="form-group">
+        <input type="text" placeholder="Emri" style="width: 300px;" class="form-control" id="first_name" name="marres_emri">
+      </div>
+      
+      <div class="form-group">
+        <input type="text" placeholder="Mbiemri" style="width: 300px;" class="form-control" id="last_name" name="marres_mbiemri">
+      </div>
+
+
+      <!-- Forma e grupit te gjakut -->
+      <label>Grupi i Gjakut</label>
+      <div class="row">
+        <div class="col-6">
+          <div class="custom-control custom-radio">
+            <input type="radio" class="custom-control-input" value="A-" id="aNegativ"
+              name="marres_gr_gjakut" >
+            <label class="custom-control-label" for="aNegativ">A-</label>
+          </div>
+
+
+          <div class="custom-control custom-radio">
+            <input type="radio" class="custom-control-input" value="A+" id="aPozitiv"
+              name="marres_gr_gjakut">
+            <label class="custom-control-label" for="aPozitiv">A+</label>
+          </div>
+
+          <div class="custom-control custom-radio">
+            <input type="radio" class="custom-control-input" value="B-" id="bNegativ"
+              name="marres_gr_gjakut">
+            <label class="custom-control-label" for="bNegativ">B-</label>
+          </div>
+
+          <div class="custom-control custom-radio">
+            <input type="radio" class="custom-control-input" value="B+" id="bPozitiv"
+              name="marres_gr_gjakut">
+            <label class="custom-control-label" for="bPozitiv">B+</label>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="custom-control custom-radio">
+            <input type="radio" class="custom-control-input" value="AB-" id="abNegativ"
+              name="marres_gr_gjakut">
+            <label class="custom-control-label" for="abNegativ">AB-</label>
+          </div>
+
+
+          <div class="custom-control custom-radio">
+            <input type="radio" class="custom-control-input" value="AB+" id="abPozitiv"
+              name="marres_gr_gjakut">
+            <label class="custom-control-label" for="abPozitiv">AB+</label>
+          </div>
+
+          <div class="custom-control custom-radio">
+            <input type="radio" class="custom-control-input" value="O-" id="zeroNegativ"
+              name="marres_gr_gjakut">
+            <label class="custom-control-label" for="zeroNegativ">0-</label>
+          </div>
+
+          <div class="custom-control custom-radio">
+            <input type="radio" class="custom-control-input" value="O+" id="zeroPozitiv"
+              name="marres_gr_gjakut">
+            <label class="custom-control-label" for="zeroPozitiv">0+</label>
+          </div>
+
+         
+
+        </div>
+      </div><br>
+      <!-- / forma e grupit te gjakut -->
+
+
+      <div class="form-group">
+        <input placeholder="Sasia (ml)" type="number" style="width: 300px;" class="form-control"  name="shto_marres_sasia">
+      </div>
+
+      <input type="Submit" value="Shto" style="width: 100px;" class="btn-danger" >
+
+    </div>
+  </div>
+</form>
+
   <!----------- Footer ------------>
   <%- include ('partials/footer.ejs') %>
 
