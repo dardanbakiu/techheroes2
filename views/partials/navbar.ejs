@@ -17,7 +17,7 @@
 
       <ul class="nav navbar-nav navbar-right" href="/">
 
-        <% if (global.dhurues  == false)  { %>
+        <% if (global.dhurues  == false)  { %> //---------------------------
         <div class="btn-group ">
           <button type="button " class="btn btn-default dropdown-toggle btn-danger" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
@@ -104,35 +104,85 @@
 </nav> -->
 
 <nav class="navbar navbar-expand-lg navbar navbar-light bg-light">
-        <img  class="navbar-brand logo" width="5%" src="giveblood.png">
+  <img class="navbar-brand logo" width="5%" src="giveblood.png">
   <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse6">
-      <span class="navbar-toggler-icon"></span>
+    <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarCollapse6">
-      <div class="navbar-nav">
+    <div class="navbar-nav">
       <!-- Ketu poshte fillojne elementet e navbarit (home, about etj...) ktu posht fillojn kushtet backend -->
-      
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dropdown link
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </li>
 
 
+      <% if (global.dhurues  == false)  { %>
+      <li class="nav-item dropdown active">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Regjistrohu
+        </a>
 
-          <a href="#" class="nav-item nav-link active">Home</a>
-          <a href="#" class="nav-item nav-link">About</a>
-          <a href="#" class="nav-item nav-link">Products</a>
+        <% if (global.admin.logged == false){ %>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/regjistrohu_si_dhurues">Regjistrohu si dhurues</a>
+        </div>
+        <% } %>
+      </li>
+      <% } %>
 
 
-           <!-- Ketu mbarojne kushtet per backend dhe elementet -->
-      </div>
+      <% if ((global.admin.logged == false) && (global.dhurues == false)){ %>
+      <li class="nav-item dropdown active">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Kycu
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/kycu_admin">Kycu si admin</a>
+          <a class="dropdown-item" href="/kycu_dhurues">Kycu si dhurues</a>
+
+        </div>
+      </li>
+      <% } %>
+      <% if ((global.admin.logged == true) && (global.dhurues == false))  { %>
+
+      <li class="nav-item dropdown active">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Dhuruesit e gjakut
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/shto_dhurues">Shto dhurues</a>
+          <a class="dropdown-item" href="/lista_dhuruesve">Lista e dhuruesve</a>
+
+        </div>
+      </li>
+
+      <li class="nav-item dropdown active">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Marrësit e gjakut
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/shto_marres">Shto marrës</a>
+          <a class="dropdown-item" href="/lista_marresve">Lista e marrësve</a>
+
+        </div>
+      </li>
+
+
+      <a href="/depozita" class="nav-item nav-link active">Depozita</a>
+      <% } %>
+
+      <% if (global.dhurues  == true) { %>
+      <a href="/profili_dhuruesit" class="nav-item nav-link active">Profili</a>
+      <% } %>
+
+      <% if ((global.admin.logged == true) || (global.dhurues == true)) { %>
+      <a href="/dil" class="nav-item nav-link active">Dil</a>
+      <% } %>
+
+      <!-- Ketu mbarojne kushtet per backend dhe elementet -->
+    </div>
 
   </div>
 </nav>
