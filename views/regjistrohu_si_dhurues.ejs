@@ -19,10 +19,10 @@
     integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
     crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="generalStyle.css">
+  <link rel="stylesheet" href="generalStyle.css">
   <!-- / Boostrap4 -->
   <link rel="stylesheet" href="navAndFooter.css">
- 
+
   <link rel="stylesheet" href="regjistrohusidhurues.css">
   <link href="style.css" rel="stylesheet" />
   <meta charset="UTF-8">
@@ -180,132 +180,143 @@ background-size: cover;
 <br> <br> <br> <br> -->
   <!----------- Footer ------------>
 
-  <form  method="POST" action="user_reg">
-  <div class="center">
-    <div class="box marginTB">
-      <div class="center"><img width="50px"  src="giveblood.png"></div>
-      <h2 class="center mb-5">Regjistrohu</h2>
-      <form method="POST" action="user_reg">
+  <form method="POST" action="user_reg">
+    <div class="center">
+      <div class="box marginTB">
+        <div class="center"><img width="50px" src="giveblood.png"></div>
+        <h2 class="center mb-5">Regjistrohu</h2>
+        <form method="POST" action="user_reg">
 
 
-        <div class="form-group">
-          <input type="text" class="form-control" id="exampleInputPassword1" name="reg_user_emri" placeholder="Emri">
-        </div>
-
-
-        <div class="form-group">
-          <input type="text" class="form-control" id="exampleInputPassword1" name="reg_user_mbiemri"
-            placeholder="Mbiemri">
-        </div>
-
-        <div class="form-group row">
-          <label for="example-date-input" class="col-2 col-form-label">Ditelindja</label>
-          <div class="col-1"></div>
-          <div class="col-8">
-            <input class="form-control" type="date" value="2011-08-19" id="example-date-input" name="reg_user_dtl">
+          <div class="form-group">
+            <input type="text" class="form-control" id="" name="reg_user_emri" placeholder="Emri">
           </div>
-        </div>
 
 
-        <div class="form-group">
-          <input type="number" class="form-control" id="exampleInputPassword1" name="reg_user_kontakti"
-            placeholder="Kontakti">
-        </div>
+          <div class="form-group">
+            <input type="text" class="form-control" id="" name="reg_user_mbiemri" placeholder="Mbiemri">
+          </div>
 
-
-        <div class="form-group">
-          <input type="email" class="form-control" id="exampleInputPassword1" name="reg_user_email" placeholder="Email">
-        </div>
-
-
-        <div class="form-group">
-          <input type="password" class="form-control" id="exampleInputPassword1" name="reg_user_password"
-            placeholder="Fjalekalimi">
-        </div>
-
-        <div class="form-group">
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Perserite Fjalekalimin">
-        </div>
-
-        <!-- Forma e grupit te gjakut -->
-        <label>Grupi i Gjakut</label>
-        <div class="row">
-          <div class="col-6">
-            <div class="custom-control custom-radio">
-              <input type="radio" class="custom-control-input" value="A-" id="aNegativ"
-                name="reg_user_gr_gjakut" >
-              <label class="custom-control-label" for="aNegativ">A-</label>
-            </div>
-
-
-            <div class="custom-control custom-radio">
-              <input type="radio" class="custom-control-input" value="A+" id="aPozitiv"
-                name="reg_user_gr_gjakut">
-              <label class="custom-control-label" for="aPozitiv">A+</label>
-            </div>
-
-            <div class="custom-control custom-radio">
-              <input type="radio" class="custom-control-input" value="B-" id="bNegativ"
-                name="reg_user_gr_gjakut">
-              <label class="custom-control-label" for="bNegativ">B-</label>
-            </div>
-
-            <div class="custom-control custom-radio">
-              <input type="radio" class="custom-control-input" value="B+" id="bPozitiv"
-                name="reg_user_gr_gjakut">
-              <label class="custom-control-label" for="bPozitiv">B+</label>
+          <div class="form-group row">
+            <label for="example-date-input" class="col-2 col-form-label">Ditelindja</label>
+            <div class="col-1"></div>
+            <div class="col-8">
+              <input class="form-control" type="date" value="2011-08-19" id="example-date-input" name="reg_user_dtl">
             </div>
           </div>
-          <div class="col-6">
-            <div class="custom-control custom-radio">
-              <input type="radio" class="custom-control-input" value="AB-" id="abNegativ"
-                name="reg_user_gr_gjakut">
-              <label class="custom-control-label" for="abNegativ">AB-</label>
+
+
+          <div class="form-group">
+            <input type="number" class="form-control" id="" name="reg_user_kontakti" placeholder="Kontakti">
+          </div>
+
+
+          <div class="form-group">
+            <input type="email" class="form-control" id="" name="reg_user_email" placeholder="Email">
+          </div>
+
+
+          <div class="form-group">
+            <input type="password" class="form-control" id="firstPassword" name="reg_user_password"
+              placeholder="Fjalekalimi">
+          </div>
+
+          <div class="form-group">
+            <input type="password" class="form-control" id="secondPassword" placeholder="Perserite Fjalekalimin">
+          </div>
+          <p class="marginTB center" style="color:red" id="passwordError"></p>
+          <!-- Forma e grupit te gjakut -->
+          <label>Grupi i Gjakut</label>
+          <div class="row">
+            <div class="col-6">
+              <div class="custom-control custom-radio">
+                <input type="radio" class="custom-control-input" value="A-" id="aNegativ" name="reg_user_gr_gjakut">
+                <label class="custom-control-label" for="aNegativ">A-</label>
+              </div>
+
+
+              <div class="custom-control custom-radio">
+                <input type="radio" class="custom-control-input" value="A+" id="aPozitiv" name="reg_user_gr_gjakut">
+                <label class="custom-control-label" for="aPozitiv">A+</label>
+              </div>
+
+              <div class="custom-control custom-radio">
+                <input type="radio" class="custom-control-input" value="B-" id="bNegativ" name="reg_user_gr_gjakut">
+                <label class="custom-control-label" for="bNegativ">B-</label>
+              </div>
+
+              <div class="custom-control custom-radio">
+                <input type="radio" class="custom-control-input" value="B+" id="bPozitiv" name="reg_user_gr_gjakut">
+                <label class="custom-control-label" for="bPozitiv">B+</label>
+              </div>
             </div>
+            <div class="col-6">
+              <div class="custom-control custom-radio">
+                <input type="radio" class="custom-control-input" value="AB-" id="abNegativ" name="reg_user_gr_gjakut">
+                <label class="custom-control-label" for="abNegativ">AB-</label>
+              </div>
 
 
-            <div class="custom-control custom-radio">
-              <input type="radio" class="custom-control-input" value="AB+" id="abPozitiv"
-                name="reg_user_gr_gjakut">
-              <label class="custom-control-label" for="abPozitiv">AB+</label>
-            </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" class="custom-control-input" value="AB+" id="abPozitiv" name="reg_user_gr_gjakut">
+                <label class="custom-control-label" for="abPozitiv">AB+</label>
+              </div>
 
-            <div class="custom-control custom-radio">
-              <input type="radio" class="custom-control-input" value="O-" id="zeroNegativ"
-                name="reg_user_gr_gjakut">
-              <label class="custom-control-label" for="zeroNegativ">0-</label>
-            </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" class="custom-control-input" value="O-" id="zeroNegativ" name="reg_user_gr_gjakut">
+                <label class="custom-control-label" for="zeroNegativ">0-</label>
+              </div>
 
-            <div class="custom-control custom-radio">
-              <input type="radio" class="custom-control-input" value="O+" id="zeroPozitiv"
-                name="reg_user_gr_gjakut">
-              <label class="custom-control-label" for="zeroPozitiv">0+</label>
+              <div class="custom-control custom-radio">
+                <input type="radio" class="custom-control-input" value="O+" id="zeroPozitiv" name="reg_user_gr_gjakut">
+                <label class="custom-control-label" for="zeroPozitiv">0+</label>
+              </div>
             </div>
           </div>
-        </div>
-        <!-- / forma e grupit te gjakut -->
+          <!-- / forma e grupit te gjakut -->
 
 
-        <label class="mt-3">A keni ndonje semundje?</label>
-        <!-- A keni semundje form -->
-        <div class="custom-control custom-radio" >
-          <input type="radio" value="semundje_jo" class="custom-control-input" id="semundjePo" name="reg_user_semundje" checked>
-          <label class="custom-control-label" for="semundjePo">Jo</label>
-        </div>
-        
-        
-        <div class="custom-control custom-radio">
-          <input type="radio" value="semundje_po" class="custom-control-input" id="semundjeJo" name="reg_user_semundje" >
-          <label class="custom-control-label" for="semundjeJo">Po</label>
-        </div>
-        <!-- / A keni semundje form -->
-        
-        <input type="submit" class="btn btn-danger mt-4" value="Regjistrohu" />
-      </form>
+          <label class="mt-3">A keni ndonje semundje?</label>
+          <!-- A keni semundje form -->
+          <div class="custom-control custom-radio">
+            <input type="radio" value="semundje_jo" class="custom-control-input" id="semundjePo"
+              name="reg_user_semundje" checked>
+            <label class="custom-control-label" for="semundjePo">Jo</label>
+          </div>
+
+
+          <div class="custom-control custom-radio">
+            <input type="radio" value="semundje_po" class="custom-control-input" id="semundjeJo"
+              name="reg_user_semundje">
+            <label class="custom-control-label" for="semundjeJo">Po</label>
+          </div>
+          <!-- / A keni semundje form -->
+
+          <input type="submit" class="btn btn-danger mt-4" value="Regjistrohu" id="submit" />
+
+
+        </form>
+      </div>
+
     </div>
+  </form>
 
-  </div>
-</form>
+  <script>
+    document.getElementById("submit").addEventListener('click', (e) => {
+      let firstPassword = document.getElementById('firstPassword').value
+      let secondPassword = document.getElementById('secondPassword').value
+      
+
+      if (firstPassword !== secondPassword) {
+        e.preventDefault();
+        document.getElementById('passwordError').innerHTML = "Fjalkalimet nuk perputhen"
+      }
+    })
+
+
+
+
+  </script>
 
   <%- include ('partials/footer.ejs') %>
 
