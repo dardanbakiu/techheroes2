@@ -20,7 +20,7 @@ router.post("/user_reg", (req, res) => {
     const reg_user_password = body.reg_user_password;
     const reg_user_gr_gjakut = body.reg_user_gr_gjakut;
     const reg_user_semundje = body.reg_user_semundje;
-    const reg_user_tatoo = body.reg_user_tatoo;
+    const reg_user_tatoo = "Undefined";
 
     console.log(reg_user_tatoo);
     console.log(reg_user_mbiemri);
