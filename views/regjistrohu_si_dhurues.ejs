@@ -189,13 +189,16 @@ background-size: cover;
 
 
           <div class="form-group">
-            <input type="text" class="form-control" id="" name="reg_user_emri" placeholder="Emri">
+            <input type="text" class="form-control" id="id_emri" name="reg_user_emri" placeholder="Emri">
           </div>
 
+          <p class="marginTB center" style="color:red" id="nameError"></p>
 
           <div class="form-group">
-            <input type="text" class="form-control" id="" name="reg_user_mbiemri" placeholder="Mbiemri">
+            <input type="text" class="form-control" id="id_mbiemri" name="reg_user_mbiemri" placeholder="Mbiemri">
           </div>
+
+          <p class="marginTB center" style="color:red" id="surnameError"></p>
 
           <div class="form-group row">
             <label for="example-date-input" class="col-2 col-form-label">Ditelindja</label>
@@ -273,6 +276,8 @@ background-size: cover;
               </div>
             </div>
           </div>
+
+          <p class="marginTB center" style="color:red" id="grGjakut_id"></p>
           <!-- / forma e grupit te gjakut -->
 
 
@@ -302,15 +307,87 @@ background-size: cover;
   </form>
 
   <script>
-    document.getElementById("submit").addEventListener('click', (e) => {
+    document.getElementById("submit").addEventListener('click', e => {
       let firstPassword = document.getElementById('firstPassword').value
       let secondPassword = document.getElementById('secondPassword').value
-      
 
-      if (firstPassword !== secondPassword) {
-        e.preventDefault();
-        document.getElementById('passwordError').innerHTML = "Fjalkalimet nuk perputhen"
+      let name = document.getElementById('id_emri').value
+      let surname = document.getElementById('id_mbiemri').value
+
+      let aPozitivChecked = document.getElementById('aPozitiv')
+      let aNegativChecked = document.getElementById('aNegativ')
+      let bPozitivChecked = document.getElementById('bPozitiv')
+      let bNegativChecked = document.getElementById('bNegativ')
+      let abNegativChecked = document.getElementById('abNegativ')
+      let abPozitivChecked = document.getElementById('abPozitiv')
+      let zeroNegativChecked = document.getElementById('zeroNegativ')
+      let zeroPozitivChecked = document.getElementById('zeroPozitiv')
+
+      let bloodTypeValue = null
+
+      if (aPozitivChecked.checked) {
+        e.preventDefault()
+        bloodTypeValue = aPozitivChecked.value
       }
+
+      if (aNegativChecked.checked) {
+        e.preventDefault()
+        bloodTypeValue = aNegativChecked.value
+      }
+
+      if (bNegativChecked.checked) {
+        e.preventDefault()
+        bloodTypeValue = bNegativChecked.value
+      }
+
+      if (bPozitivChecked.checked) {
+        e.preventDefault()
+        bloodTypeValue = bPozitivChecked.value
+      }
+
+      if (abPozitivChecked.checked) {
+        e.preventDefault()
+        bloodTypeValue = abPozitivChecked.value
+      }
+
+      if (abNegativChecked.checked) {
+        e.preventDefault()
+        bloodTypeValue = abNegativChecked.value
+      }
+
+      if (zeroNegativChecked.checked) {
+        e.preventDefault()
+        bloodTypeValue = zeroNegativChecked.value
+      }
+
+      if (zeroPozitivChecked.checked) {
+        e.preventDefault()
+        bloodTypeValue = zeroPozitivChecked.value
+      }
+
+      if (bloodTypeValue === null) {
+        document.getElementById('grGjakut_id').innerHTML = "Not filled"
+      }
+
+      if (bloodTypeValue !== null) {
+        document.getElementById('grGjakut_id').style.display = "none"
+      }
+
+        if (firstPassword !== secondPassword) {
+          e.preventDefault();
+          document.getElementById('passwordError').innerHTML = "Fjalkalimet nuk perputhen"
+        }
+
+      if (name.length < 2) {
+        e.preventDefault();
+        document.getElementById('nameError').innerHTML = "Emri duhet te ket me shume se 2 karaktere"
+      }
+
+      if (surname.length < 2) {
+        e.preventDefault();
+        document.getElementById('surnameError').innerHTML = "Mbiemri duhet te ket me shume se 2 karaktere"
+      }
+
     })
 
 
