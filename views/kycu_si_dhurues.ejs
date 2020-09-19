@@ -3,7 +3,7 @@
 
 <head>
   <title>Dhuro gjak,shpëto jetë!</title>
-  <link href = "giveblood.png"  rel="icon" type="image/gif">
+  <link href="giveblood.png" rel="icon" type="image/gif">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Bootstrap4 -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -18,7 +18,7 @@
     integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
     crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="generalStyle.css">
+  <link rel="stylesheet" href="generalStyle.css">
   <!-- / Boostrap4 -->
   <link rel="stylesheet" href="navAndFooter.css">
   <link rel="stylesheet" href="kycu.css">
@@ -36,7 +36,7 @@
   <section class="marginTB">
     <center>
       <div class="box">
-        <img width="50px"  src="giveblood.png">
+        <img width="50px" src="giveblood.png">
         <h4> Kyçu si dhurues</h4>
         <br>
         <form method="POST" action="kycu_dhurues_form">
@@ -48,7 +48,7 @@
                 <input type="text" class="form-control" id="usr" name="kycu_dhurues_email" placeholder="Email">
               </div>
             </div>
-            
+
           </div>
 
           <div class="row">
@@ -59,20 +59,17 @@
                 <input type="password" class="form-control" id="usr" name="kycu_dhurues_pw" placeholder="Password">
               </div>
 
-              <input type="submit" value="Kyçu" class="btn btn-danger">
-              <h3 style="color:red;"><%= errorStatement %></h3>
+              <input type="submit" id="submitBTN" value="Kyçu" class="btn btn-danger">
+              <p style="color:red;"><%= errorStatement %></p>
         </form>
       </div>
-      
-      
+
+
     </center>
   </section>
-  
-  <script> 
-      
-  </script>
-    <!----------- Footer ------------>
-    <%- include ('partials/footer.ejs') %>
+
+  <!----------- Footer ------------>
+  <%- include ('partials/footer.ejs') %>
 
 </body>
 

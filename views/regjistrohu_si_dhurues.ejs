@@ -215,9 +215,10 @@ background-size: cover;
 
 
           <div class="form-group">
-            <input type="email" class="form-control" id="" name="reg_user_email" placeholder="Email">
+            <input type="email" class="form-control" id="email_id" name="reg_user_email" placeholder="Email">
           </div>
-
+          
+          <p class="marginTB center" style="color:red" id="emailError"></p>
 
           <div class="form-group">
             <input type="password" class="form-control" id="firstPassword" name="reg_user_password"
@@ -314,6 +315,8 @@ background-size: cover;
       let name = document.getElementById('id_emri').value
       let surname = document.getElementById('id_mbiemri').value
 
+      let email = document.getElementById('email_id').value
+
       let aPozitivChecked = document.getElementById('aPozitiv')
       let aNegativChecked = document.getElementById('aNegativ')
       let bPozitivChecked = document.getElementById('bPozitiv')
@@ -324,6 +327,11 @@ background-size: cover;
       let zeroPozitivChecked = document.getElementById('zeroPozitiv')
 
       let bloodTypeValue = null
+
+      if (email == "") {
+        e.preventDefault()
+        document.getElementById('emailError').innerHTML = "Kerkohet Email!"
+      }
 
       if (aPozitivChecked.checked) {
         e.preventDefault()
@@ -366,7 +374,7 @@ background-size: cover;
       }
 
       if (bloodTypeValue === null) {
-        document.getElementById('grGjakut_id').innerHTML = "Not filled"
+        document.getElementById('grGjakut_id').innerHTML = "Nuk eshte selektuar asnjera!"
       }
 
       if (bloodTypeValue !== null) {
