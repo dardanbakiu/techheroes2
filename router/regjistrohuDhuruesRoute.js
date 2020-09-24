@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const db = require("../database");
+const db = require("../model/database");
+const User = require('../model/User')
 
 // const User = require("../models/users");
 
@@ -32,13 +33,31 @@ router.post("/user_reg", (req, res) => {
     console.log(reg_user_semundje);
     console.log(reg_user_tatoo);
 
-    db.execute("INSERT INTO users(emri,mbiemri,ditelindja,kontakti,email,password,grgjakut,semundje,tatoo) values('" + reg_user_emri + "','" + reg_user_mbiemri + "','" + reg_user_dtl + "','" + reg_user_kontakti + "','" + reg_user_email + "','" + reg_user_password + "','" + reg_user_gr_gjakut + "','" + reg_user_semundje + "','" + reg_user_tatoo + "')     ")
-        .then(() => {
-            res.render('dhurogjak_shpetojete');
-        })
-        .catch(err => {
-            console.log(err);
-        });
+    User.create({
+        emri: reg_user_emri,
+        mbiemri: reg_user_mbiemri,
+        ditelindja: reg_user_dtl,
+        kontakti: reg_user_kontakti,
+        email: reg_user_email,
+        password: reg_user_password,
+        grgjakut: reg_user_gr_gjakut,
+        semundje: reg_user_semundje,
+        tatoo: reg_user_tatoo
+    })
+    .then(() => {
+        res.render('dhurogjak_shpetojete');
+    })
+    .catch(err => {
+        console.log(err);
+    });
+
+    // db.execute("INSERT INTO users(emri,mbiemri,ditelindja,kontakti,email,password,grgjakut,semundje,tatoo) values('" + reg_user_emri + "','" + reg_user_mbiemri + "','" + reg_user_dtl + "','" + reg_user_kontakti + "','" + reg_user_email + "','" + reg_user_password + "','" + reg_user_gr_gjakut + "','" + reg_user_semundje + "','" + reg_user_tatoo + "')     ")
+    //     .then(() => {
+    //         res.render('dhurogjak_shpetojete');
+    //     })
+    //     .catch(err => {
+    //         console.log(err);
+    //     });
 });
 
 

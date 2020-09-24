@@ -12,7 +12,8 @@ const kyquAdminRoute = require('./router/kyquAdminRoute');
 const kyquDhuruesRoute = require('./router/kyquDhuruesRoute');
 const shtoDhuruesRoute = require('./router/shtoDhuruesRoute');
 const shtoMarresRoute = require('./router/shtoMarresRoute');
-const db = require("./database");
+const db = require("./model/database");
+const sequelize = require('./model/db')
 
 
 app.use('/', express.static('static'));
@@ -36,11 +37,11 @@ global.admin = {
 }
 
 global.tokenProfile = {
-    logged:false,
-    emri : "",
-    mbiemri : "",
-    kontakti : "",
-    grgjakut : "",
+    logged: false,
+    emri: "",
+    mbiemri: "",
+    kontakti: "",
+    grgjakut: "",
     historia: ""
 };
 
@@ -60,4 +61,8 @@ app.use('/', shtoMarresRoute.route);
 
 
 const port = 3000
-app.listen(port);   
+sequelize.sync()
+    .then(result => {
+        app.listen(port)
+    })
+    .catch(err => console.log(err))

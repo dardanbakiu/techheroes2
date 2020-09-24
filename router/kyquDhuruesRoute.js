@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const db = require("../database");
+const db = require("../model/database");
+
+var jwt = require('jsonwebtoken');
 
 router.get('/kycu_dhurues', (req, res) => {
 
@@ -38,34 +40,38 @@ router.post('/kycu_dhurues_form', (req, res) => {
 
             db.query("select * from users where email='" + email + "' and password='" + password + "';", function (err, result, fields) {
                 if (err) throw err;
-                console.log("qetu  :" +result[0].emri);
+                console.log("qetu  :" + result[0].email);
 
-                
+                const token = jwt.sign({
+                    email: result[0].email
+                }, 'secret', { expiresIn: 60 /* 5min */ });
+
+                console.log(token)
 
                 db.query("select * from shtodhurues where email='" + email + "' ;", function (err, result2, fields) {
                     if (result2.length != 0) {
                         global.tokenProfile.historia = result2[0].sasia + " ml";
-                        global.tokenProfile.emri= result[0].emri ;
-                        global.tokenProfile.mbiemri= result[0].mbiemri ;
-                        global.tokenProfile.kontakti =  result[0].kontakti ;
-                        global.tokenProfile.grgjakut =  result[0].grgjakut ;
-                        console.log("qetuuuuuuu: "+JSON.stringify(result2));
-                        
-                        res.render('dhurogjak_shpetojete');
+                        global.tokenProfile.emri = result[0].emri;
+                        global.tokenProfile.mbiemri = result[0].mbiemri;
+                        global.tokenProfile.kontakti = result[0].kontakti;
+                        global.tokenProfile.grgjakut = result[0].grgjakut;
+                        console.log("qetuuuuuuu: " + JSON.stringify(result2) + ' email:' + email);
+
+                        // console.log(`email: ${result[0].email}`)
+
+                        res.render('dhurogjak_shpetojete', {token:token});
                     }
                     else {
                         global.tokenProfile.historia = " 0 ml";
-                        global.tokenProfile.emri=  result[0].emri ;
-                        global.tokenProfile.mbiemri=  result[0].mbiemri ;
-                        global.tokenProfile.kontakti =  result[0].kontakti ;
-                        global.tokenProfile.grgjakut =  result[0].grgjakut ;
+                        global.tokenProfile.emri = result[0].emri;
+                        global.tokenProfile.mbiemri = result[0].mbiemri;
+                        global.tokenProfile.kontakti = result[0].kontakti;
+                        global.tokenProfile.grgjakut = result[0].grgjakut;
                         res.render('dhurogjak_shpetojete');
 
                     }
                 });
             });
-
-
         }
 
         else {
