@@ -5,7 +5,7 @@ const db = require("../model/database");
 // const User = require("../models/users");
 
 router.get('/depozita', (req, res) => {
-     db.query("select * from depozita", (err, rows, fields) => {
+     db.query("select * from deposits", (err, rows, fields) => {
           if (err) throw err
 
           var AnegativElementet = 0;
@@ -27,9 +27,6 @@ router.get('/depozita', (req, res) => {
                ABnegativElementet += rows[i].ABnegativ;
                OpozitivElementet += rows[i].Opozitiv;
                OnegativElementet += rows[i].Onegativ;
-
-
-
 
           }
           res.render("depozita", {
