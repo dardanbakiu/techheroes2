@@ -23,55 +23,111 @@ router.post('/shto_marres_form', (req, res) => {
         grgjakut: marres_gr_gjakut,
         sasia: marres_sasia
     })
-        .then(() => {
-            if (marres_gr_gjakut == "A-") {
-                Deposits.create({
-                    Anegativ: minusSasia
-                })
-            }
+    .then(() => {
+        if (shto_dhurues_gr_gjakut == "A-") {
+            Deposits.create({
+                Anegativ: minusSasia,
+                Apozitiv: 0,
+                Bpozitiv: 0,
+                Bnegativ: 0,
+                ABnegativ: 0,
+                ABpozitiv: 0,
+                Opozitiv: 0,    
+                Onegativ:0
+            })
+        }
 
-            if (marres_gr_gjakut == "A+") {
-                Deposits.create({
-                    Apozitiv: minusSasia
-                })
-            }
+        if (shto_dhurues_gr_gjakut == "A+") {
+            Deposits.create({
+                Anegativ: 0,
+                Apozitiv: minusSasia,
+                Bpozitiv: 0,
+                Bnegativ: 0,
+                ABnegativ: 0,
+                ABpozitiv: 0,
+                Opozitiv: 0,    
+                Onegativ:0
+            })
+        }
 
-            if (marres_gr_gjakut == "B+") {
-                Deposits.create({
-                    Bpozitiv: minusSasia
-                })
-            }
+        if (shto_dhurues_gr_gjakut == "B+") {
+            Deposits.create({
+                Anegativ: 0,
+                Apozitiv: 0,
+                Bpozitiv: minusSasia,
+                Bnegativ: 0,
+                ABnegativ: 0,
+                ABpozitiv: 0,
+                Opozitiv: 0,    
+                Onegativ:0
+            })
+        }
 
-            if (marres_gr_gjakut == "B-") {
-                Deposits.create({
-                    Bnegativ: minusSasia
-                })
-            }
+        if (shto_dhurues_gr_gjakut == "B-") {
+            Deposits.create({
+                Anegativ: 0,
+                Apozitiv: 0,
+                Bpozitiv: 0,
+                Bnegativ: minusSasia,
+                ABnegativ: 0,
+                ABpozitiv: 0,
+                Opozitiv: 0,    
+                Onegativ:0
+            })
+        }
 
-            if (marres_gr_gjakut == "AB+") {
-                Deposits.create({
-                    ABpozitiv: minusSasia
-                })
-            }
+        if (shto_dhurues_gr_gjakut == "AB+") {
+            Deposits.create({
+                Anegativ: 0,
+                Apozitiv: 0,
+                Bpozitiv: 0,
+                Bnegativ: 0,
+                ABnegativ: 0,
+                ABpozitiv: minusSasia,
+                Opozitiv: 0,    
+                Onegativ:0
+            })
+        }
 
-            if (marres_gr_gjakut == "AB-") {
-                Deposits.create({
-                    ABnegativ: minusSasia
-                })
-            }
+        if (shto_dhurues_gr_gjakut == "AB-") {
+            Deposits.create({
+                Anegativ: 0,
+                Apozitiv: 0,
+                Bpozitiv: 0,
+                Bnegativ: 0,
+                ABnegativ: minusSasia,
+                ABpozitiv: 0,
+                Opozitiv: 0,    
+                Onegativ:0
+            })
+        }
 
-            if (marres_gr_gjakut == "O-") {
-                Deposits.create({
-                    Onegativ: minusSasia
-                })
-            }
+        if (shto_dhurues_gr_gjakut == "O-") {
+            Deposits.create({
+                Anegativ: 0,
+                Apozitiv: 0,
+                Bpozitiv: 0,
+                Bnegativ: 0,
+                ABnegativ: 0,
+                ABpozitiv: 0,
+                Opozitiv: 0,    
+                Onegativ:minusSasia
+            })
+        }
 
-            if (marres_gr_gjakut == "O+") {
-                Deposits.create({
-                    Opozitiv: minusSasia
-                })
-            }
-        })
+        if (shto_dhurues_gr_gjakut == "O+") {
+            Deposits.create({
+                Anegativ: 0,
+                Apozitiv: 0,
+                Bpozitiv: 0,
+                Bnegativ: 0,
+                ABnegativ: 0,
+                ABpozitiv: 0,
+                Opozitiv: minusSasia,    
+                Onegativ:0
+            })
+        }
+    })
         .then(() => {
             res.redirect('/shto_marres')
         })

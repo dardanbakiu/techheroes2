@@ -1,32 +1,32 @@
 const express = require('express');
 const router = express.Router();
 const db = require("../model/database");
+const Deposits = require('../model/Deposits')
 
 // const User = require("../models/users");
 
 router.get('/depozita', (req, res) => {
-     db.query("select * from deposits", (err, rows, fields) => {
-          if (err) throw err
+     Deposits.findAll()
+        .then(rows => {
 
-          var AnegativElementet = 0;
-          var ApozitivElementet = 0;
-          var BpozitivElementet = 0;
-          var BnegativElementet = 0;
-          var ABpozitivElementet = 0;
-          var ABnegativElementet = 0;
-          var OpozitivElementet = 0;
-          var OnegativElementet = 0;
+          let AnegativElementet = 0;
+          let ApozitivElementet = 0;
+          let BpozitivElementet = 0;
+          let BnegativElementet = 0;
+          let ABpozitivElementet = 0;
+          let ABnegativElementet = 0;
+          let OpozitivElementet = 0;
+          let OnegativElementet = 0;
 
           for (i = 0; i < rows.length; i++) {
-
-               AnegativElementet += rows[i].Anegativ;
-               ApozitivElementet += rows[i].Apozitiv;
-               BpozitivElementet += rows[i].Bpozitiv;
-               BnegativElementet += rows[i].Bnegativ;
-               ABpozitivElementet += rows[i].ABpozitiv;
-               ABnegativElementet += rows[i].ABnegativ;
-               OpozitivElementet += rows[i].Opozitiv;
-               OnegativElementet += rows[i].Onegativ;
+               AnegativElementet += parseInt(rows[i].Anegativ);
+               ApozitivElementet += parseInt(rows[i].Apozitiv);
+               BpozitivElementet += parseInt(rows[i].Bpozitiv);
+               BnegativElementet += parseInt(rows[i].Bnegativ);
+               ABpozitivElementet += parseInt(rows[i].ABpozitiv);
+               ABnegativElementet += parseInt(rows[i].ABnegativ);
+               OpozitivElementet += parseInt(rows[i].Opozitiv);
+               OnegativElementet += parseInt(rows[i].Onegativ);
 
           }
           res.render("depozita", {
@@ -39,7 +39,44 @@ router.get('/depozita', (req, res) => {
                Onegativ: OnegativElementet,
                Opozitiv: OpozitivElementet
           });
-     });
+        })
+
+
+     // db.query("select * from deposits", (err, rows, fields) => {
+     //      if (err) throw err
+
+     //      let AnegativElementet = 0;
+     //      let ApozitivElementet = 0;
+     //      let BpozitivElementet = 0;
+     //      let BnegativElementet = 0;
+     //      let ABpozitivElementet = 0;
+     //      let ABnegativElementet = 0;
+     //      let OpozitivElementet = 0;
+     //      let OnegativElementet = 0;
+
+     //      for (i = 0; i < rows.length; i++) {
+
+     //           AnegativElementet += rows[i].Anegativ;
+     //           ApozitivElementet += rows[i].Apozitiv;
+     //           BpozitivElementet += rows[i].Bpozitiv;
+     //           BnegativElementet += rows[i].Bnegativ;
+     //           ABpozitivElementet += rows[i].ABpozitiv;
+     //           ABnegativElementet += rows[i].ABnegativ;
+     //           OpozitivElementet += rows[i].Opozitiv;
+     //           OnegativElementet += rows[i].Onegativ;
+
+     //      }
+     //      res.render("depozita", {
+     //           Anegativ: AnegativElementet,
+     //           Apozitiv: ApozitivElementet,
+     //           Bpozitiv: BpozitivElementet,
+     //           Bnegativ: BnegativElementet,
+     //           ABnegativ: ABnegativElementet,
+     //           ABpozitiv: ABpozitivElementet,
+     //           Onegativ: OnegativElementet,
+     //           Opozitiv: OpozitivElementet
+     //      });
+     // });
 
 });
 

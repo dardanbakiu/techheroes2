@@ -31,7 +31,7 @@ router.post("/user_reg", (req, res) => {
         tatoo: reg_user_tatoo
     })
     .then(() => {
-        res.redirect('/dhurogjak_shpetojete');
+        res.redirect('/');
     })
     .catch(err => {
         console.log(err);

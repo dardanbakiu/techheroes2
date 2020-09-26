@@ -28,49 +28,105 @@ router.post('/shto_dhurues_form', async (req, res) => {
         .then(() => {
             if (shto_dhurues_gr_gjakut == "A-") {
                 Deposits.create({
-                    Anegativ: shto_dhurues_sasia
+                    Anegativ: shto_dhurues_sasia,
+                    Apozitiv: 0,
+                    Bpozitiv: 0,
+                    Bnegativ: 0,
+                    ABnegativ: 0,
+                    ABpozitiv: 0,
+                    Opozitiv: 0,    
+                    Onegativ:0
                 })
             }
 
             if (shto_dhurues_gr_gjakut == "A+") {
                 Deposits.create({
-                    Apozitiv: shto_dhurues_sasia
+                    Anegativ: 0,
+                    Apozitiv: shto_dhurues_sasia,
+                    Bpozitiv: 0,
+                    Bnegativ: 0,
+                    ABnegativ: 0,
+                    ABpozitiv: 0,
+                    Opozitiv: 0,    
+                    Onegativ:0
                 })
             }
 
             if (shto_dhurues_gr_gjakut == "B+") {
                 Deposits.create({
-                    Bpozitiv: shto_dhurues_sasia
+                    Anegativ: 0,
+                    Apozitiv: 0,
+                    Bpozitiv: shto_dhurues_sasia,
+                    Bnegativ: 0,
+                    ABnegativ: 0,
+                    ABpozitiv: 0,
+                    Opozitiv: 0,    
+                    Onegativ:0
                 })
             }
 
             if (shto_dhurues_gr_gjakut == "B-") {
                 Deposits.create({
-                    Bnegativ: shto_dhurues_sasia
+                    Anegativ: 0,
+                    Apozitiv: 0,
+                    Bpozitiv: 0,
+                    Bnegativ: shto_dhurues_sasia,
+                    ABnegativ: 0,
+                    ABpozitiv: 0,
+                    Opozitiv: 0,    
+                    Onegativ:0
                 })
             }
 
             if (shto_dhurues_gr_gjakut == "AB+") {
                 Deposits.create({
-                    ABpozitiv: shto_dhurues_sasia
+                    Anegativ: 0,
+                    Apozitiv: 0,
+                    Bpozitiv: 0,
+                    Bnegativ: 0,
+                    ABnegativ: 0,
+                    ABpozitiv: shto_dhurues_sasia,
+                    Opozitiv: 0,    
+                    Onegativ:0
                 })
             }
 
             if (shto_dhurues_gr_gjakut == "AB-") {
                 Deposits.create({
-                    ABnegativ: shto_dhurues_sasia
+                    Anegativ: 0,
+                    Apozitiv: 0,
+                    Bpozitiv: 0,
+                    Bnegativ: 0,
+                    ABnegativ: shto_dhurues_sasia,
+                    ABpozitiv: 0,
+                    Opozitiv: 0,    
+                    Onegativ:0
                 })
             }
 
             if (shto_dhurues_gr_gjakut == "O-") {
                 Deposits.create({
-                    Onegativ: shto_dhurues_sasia
+                    Anegativ: 0,
+                    Apozitiv: 0,
+                    Bpozitiv: 0,
+                    Bnegativ: 0,
+                    ABnegativ: 0,
+                    ABpozitiv: 0,
+                    Opozitiv: 0,    
+                    Onegativ:shto_dhurues_sasia
                 })
             }
 
             if (shto_dhurues_gr_gjakut == "O+") {
                 Deposits.create({
-                    Opozitiv: shto_dhurues_sasia
+                    Anegativ: 0,
+                    Apozitiv: 0,
+                    Bpozitiv: 0,
+                    Bnegativ: 0,
+                    ABnegativ: 0,
+                    ABpozitiv: 0,
+                    Opozitiv: shto_dhurues_sasia,    
+                    Onegativ:0
                 })
             }
         })
