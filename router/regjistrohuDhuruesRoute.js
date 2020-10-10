@@ -3,6 +3,7 @@ const router = express.Router();
 const db = require("../model/database");
 const User = require('../model/User')
 
+
 router.get('/regjistrohu_si_dhurues', (req, res) => {
     res.render('regjistrohu_si_dhurues');
 });

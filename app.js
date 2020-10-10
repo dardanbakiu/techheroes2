@@ -14,6 +14,17 @@ const shtoDhuruesRoute = require('./router/shtoDhuruesRoute');
 const shtoMarresRoute = require('./router/shtoMarresRoute');
 const db = require("./model/database");
 const sequelize = require('./model/db')
+const session = require('express-session')
+
+
+
+app.use(session({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: true,
+    // expires: new Date(Date.now() + (5*1000))
+    cookie: { maxAge: 60 * 1000 }
+}))
 
 
 app.use('/', express.static('static'));
@@ -29,6 +40,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // .catch(err => {
 //     console.log(err);
 // });
+
+app.post('/logout', (req, res) => {
+    req.session.destroy(function (err) {
+       res.redirect('/')
+    })
+})
 
 global.admin = {
     username: "admin",

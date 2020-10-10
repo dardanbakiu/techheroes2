@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
+const userAuthMiddleware = require('../middleware/userAuthMiddleWare')
 
-router.get('/profili_dhuruesit', (req, res) => {
+router.get('/profili_dhuruesit',userAuthMiddleware, (req, res) => {
     res.render('profili_dhuruesit', {
         historia : global.tokenProfile.historia,
         emri : global.tokenProfile.emri,
