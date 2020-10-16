@@ -40,7 +40,7 @@ router.post('/kycu_dhurues_form', async (req, res) => {
                 req.session.isLoggedSession = email
                 console.log(req.session.isLoggedSession)
                 
-                res.redirect('/')
+                res.redirect(`/profili_dhuruesit/${email}`)
             }
     
         })

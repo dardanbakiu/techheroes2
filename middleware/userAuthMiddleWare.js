@@ -1,4 +1,4 @@
-isLoogedMiddleware = (req,res,next) => {
+DonatorIsLoogedMiddleware = (req,res,next) => {
     if(!req.session.isLoggedSession) {
         res.redirect('/')
     }
@@ -6,4 +6,4 @@ isLoogedMiddleware = (req,res,next) => {
     next()
 }
 
-module.exports = isLoogedMiddleware
+module.exports = DonatorIsLoogedMiddleware

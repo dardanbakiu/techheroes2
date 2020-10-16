@@ -32,7 +32,50 @@
 </head>
 
 <body>
-  <%- include ('partials/navbar.ejs') %>
+  <nav class="navbar navbar-expand-lg navbar navbar-light bg-light">
+    <img class="navbar-brand logo" width="5%" src="giveblood.png">
+  
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse6">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarCollapse6">
+      <div class="navbar-nav">
+        
+        <li class="nav-item dropdown active">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Dhuruesit e gjakut
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="/shto_dhurues">Shto dhurues</a>
+            <a class="dropdown-item" href="/lista_dhuruesve">Lista e dhuruesve</a>
+  
+          </div>
+        </li>
+  
+        <li class="nav-item dropdown active">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Marrësit e gjakut
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="/shto_marres">Shto marrës</a>
+            <a class="dropdown-item" href="/lista_marresve">Lista e marrësve</a>
+  
+          </div>
+        </li>
+  
+  
+        <a href="/depozita" class="nav-item nav-link active">Depozita</a>
+        
+        <a href="/dil" class="nav-item nav-link active">Dil</a>
+        
+        <!-- Ketu mbarojne kushtet per backend dhe elementet -->
+      </div>
+  
+    </div>
+  </nav>
 
 
   <div class="extraMarginTB">
