@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
+const adminAuthMiddleware = require('../middleware/adminAuthMiddleWare');
 
 
-
-router.get('/regjistrohu_si_administrator', (req, res) => {
+router.get('/adminRegister',adminAuthMiddleware, (req, res) => {
     res.render('regjistrohu_si_administrator');
 });
 

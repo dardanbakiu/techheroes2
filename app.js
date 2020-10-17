@@ -41,28 +41,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 //     console.log(err);
 // });
 
-app.post('/logout', (req, res) => {
+app.post('/shkyqu', (req, res) => {
     req.session.destroy(function (err) {
        res.redirect('/')
     })
 })
 
-global.admin = {
-    username: "admin",
-    password: "admin",
-    logged: false
-}
-
-global.tokenProfile = {
-    logged: false,
-    emri: "",
-    mbiemri: "",
-    kontakti: "",
-    grgjakut: "",
-    historia: ""
-};
-
-global.dhurues = false;
 
 app.use('/', ballinaRoute.route);
 app.use('/', depozitaRoute.route);

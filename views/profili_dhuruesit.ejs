@@ -3,27 +3,27 @@
 
 <head>
   <title>Dhuro gjak,shpëto jetë!</title>
-  <link href = "giveblood.png"  rel="icon" type="image/gif">
+  <link href="giveblood.png" rel="icon" type="image/gif">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <!-- Bootstrap4 -->
-   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-   integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-   integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-   crossorigin="anonymous"></script>
- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-   integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-   crossorigin="anonymous"></script>
- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-   integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-   crossorigin="anonymous"></script>
+  <!-- Bootstrap4 -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
 
-   <link rel="stylesheet" href="generalStyle.css">
- <!-- / Boostrap4 -->
+  <link rel="stylesheet" href="generalStyle.css">
+  <!-- / Boostrap4 -->
   <link rel="stylesheet" href="navAndFooter.css">
   <link rel="stylesheet" href="profili.css">
   <link rel="stylesheet" href="card.css">
- 
+
   <link href="style.css" rel="stylesheet" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -40,46 +40,49 @@ background-repeat : no-repeat;
 background-size: cover;
 
 ">
-<nav class="navbar navbar-expand-lg navbar navbar-light bg-light">
-  <img class="navbar-brand logo" width="5%" src="giveblood.png">
+  <nav class="navbar navbar-expand-lg navbar navbar-light bg-light">
+    <img class="navbar-brand logo" width="5%" src="giveblood.png">
 
-  <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse6">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse6">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <div class="collapse navbar-collapse" id="navbarCollapse6">
-    <div class="navbar-nav">
-      
-      <a href="/profili_dhuruesit" class="nav-item nav-link active">Profili</a>
-    
-      <a href="/dil" class="nav-item nav-link active">Dil</a>
-      
+    <div class="collapse navbar-collapse" id="navbarCollapse6">
+      <div class="navbar-nav">
+
+        <form action="/shkyqu" method="POST">
+          <button class="nav-item nav-link active btn btn-light" type="submit">Dil</button>
+        </form>
+
+      </div>
+
     </div>
-
-  </div>
-</nav>
+  </nav>
 
 
-<div class="box center marginTB">
+  <div class="box center marginTB">
 
-  <!-- ketu perfundon CARD 1 -->
+    <!-- ketu perfundon CARD 1 -->
     <div class="card">
-      <img class="card-img-top" style="width:50%; margin:0 auto;"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ8SyFsniTLCC5pw6Y_GFgRuLR6-b4fKGmmGhGgj4Jd0tTuosAI" alt="Card image">
+      <img class="card-img-top" style="width:50%; margin:0 auto;"
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ8SyFsniTLCC5pw6Y_GFgRuLR6-b4fKGmmGhGgj4Jd0tTuosAI"
+        alt="Card image">
       <div class="card-body">
         <h5 class="card-title"><%= emri %> <%= mbiemri %></h5>
-        <p class="card-text"> Kontakti: <%= kontakti %> <br> Grupi i gjakut: <%= grgjakut %> <br> Historia:  <%= sasia %> ml</p>
+        <p class="card-text"> Kontakti: <%= kontakti %> <br> Grupi i gjakut: <%= grgjakut %> <br> Historia: <%= sasia %>
+          ml</p>
       </div>
       <div class="card-footer">
         <small class="text-muted">Profili i <%= emri %> <%= mbiemri %></small>
       </div>
     </div>
-</div>
-  
+  </div>
 
 
-        <!----------- Footer ------------>
-        <%- include ('partials/footer.ejs') %>
-     
+
+  <!----------- Footer ------------>
+  <%- include ('partials/footer.ejs') %>
+
 </body>
 
 </html>

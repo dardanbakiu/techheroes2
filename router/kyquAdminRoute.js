@@ -23,9 +23,10 @@ router.post('/kycu_admin_btn', (req, res) => {
         global.admin.logged = false;
         console.log(global.admin.logged);
         console.log(password);
+        res.redirect('/kycu_admin');
     }
 
-    res.render('dhurogjak_shpetojete');
+    
 });
 
 router.post('/dil', (req, res) => {
