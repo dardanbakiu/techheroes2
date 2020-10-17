@@ -23,7 +23,7 @@ app.use(session({
     resave: false,
     saveUninitialized: true,
     // expires: new Date(Date.now() + (5*1000))
-    cookie: { maxAge: 60 * 1000 }
+    cookie: { maxAge:  30*60*1000 }
 }))
 
 

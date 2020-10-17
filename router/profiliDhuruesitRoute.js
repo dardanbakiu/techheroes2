@@ -5,6 +5,7 @@ const User = require('../model/User')
 const Donor = require('../model/Donors')
 const Sequelize = require('sequelize')
 
+
 router.get('/profili_dhuruesit/:email', userAuthMiddleware, (req, res) => {
     const emailParameter = req.params.email
     User.findOne({

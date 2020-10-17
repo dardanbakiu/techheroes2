@@ -3,8 +3,9 @@ const router = express.Router();
 const db = require("../model/database");
 const Receivers = require('../model/Receivers')
 const Deposits = require('../model/Deposits')
+const adminAuthMiddleware = require('../middleware/adminAuthMiddleWare');
 
-router.get('/shto_marres', (req, res) => {
+router.get('/shto_marres',adminAuthMiddleware, (req, res) => {
     res.render('shto_marres');
 });
 

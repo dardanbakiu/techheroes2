@@ -2,10 +2,11 @@ const express = require('express');
 const router = express.Router();
 const db = require("../model/database");
 const Deposits = require('../model/Deposits')
+const adminAuthMiddleware = require('../middleware/adminAuthMiddleWare');
 
 // const User = require("../models/users");
 
-router.get('/depozita', (req, res) => {
+router.get('/depozita',adminAuthMiddleware, (req, res) => {
      Deposits.findAll()
         .then(rows => {
 
