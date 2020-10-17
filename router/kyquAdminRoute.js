@@ -12,12 +12,12 @@ router.post('/kycu_admin_btn', (req, res) => {
     const password = body.kycu_admin_password;
 
     // console.log(username + " " + password);
-    if ((username == global.admin.username) && (password == global.admin.password)) {
-        console.log(global.admin.password);
-        global.admin.logged = true;
+    if ((username == "admin") && (password == "admin")) {
+        console.log("Admin is logged");
+        req.session.AdminIsLoggedSession = username
+        console.log(req.session.AdminIsLoggedSession)
 
-        console.log(global.admin.logged);
-        console.log(username);
+        res.redirect(`/depozita`)
     }
     else {
         global.admin.logged = false;
