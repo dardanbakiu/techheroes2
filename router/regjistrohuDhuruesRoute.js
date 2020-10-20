@@ -10,33 +10,49 @@ router.get('/regjistrohu_si_dhurues', (req, res) => {
 
 router.post("/user_reg", (req, res) => {
     const reg_user_tatoo = "Undefined";
-    const {reg_user_emri,
+    const { reg_user_emri,
         reg_user_mbiemri,
         reg_user_dtl,
         reg_user_kontakti,
         reg_user_email,
         reg_user_password,
         reg_user_gr_gjakut,
-        reg_user_semundje} = req.body;
-        
+        reg_user_semundje } = req.body;
 
-    User.create({
-        emri: reg_user_emri,
-        mbiemri: reg_user_mbiemri,
-        ditelindja: reg_user_dtl,
-        kontakti: reg_user_kontakti,
-        email: reg_user_email,
-        password: reg_user_password,
-        grgjakut: reg_user_gr_gjakut,
-        semundje: reg_user_semundje,
-        tatoo: reg_user_tatoo
+    User.findOne({
+        where: {
+            email: reg_user_email
+        }
+    }).then(result => {
+        if (result) {
+            console.log(`useri ekziston`)
+            res.redirect('/')
+        }
+        else {
+            console.log(`Ky user nuk egziston`)
+            User.create({
+                emri: reg_user_emri,
+                mbiemri: reg_user_mbiemri,
+                ditelindja: reg_user_dtl,
+                kontakti: reg_user_kontakti,
+                email: reg_user_email,
+                password: reg_user_password,
+                grgjakut: reg_user_gr_gjakut,
+                semundje: reg_user_semundje,
+                tatoo: reg_user_tatoo
+            })
+                .then(() => {
+                    res.redirect('/kycu_dhurues');
+                })
+                .catch(err => {
+                    res.redirect('/')
+                });
+        }
+    }).catch(err => {
+        console.log(err)
     })
-    .then(() => {
-        res.redirect('/');
-    })
-    .catch(err => {
-        console.log(err);
-    });
+
+
 });
 
 exports.route = router;

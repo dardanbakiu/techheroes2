@@ -40,8 +40,8 @@ background-repeat : no-repeat;
 background-size: cover;
 
 ">
-  <nav class="navbar navbar-expand-lg navbar navbar-light bg-light">
-    <img class="navbar-brand logo" width="5%" src="giveblood.png">
+  <nav style="min-height:5.5em" class="navbar navbar-expand-lg navbar navbar-light bg-light">
+    <img class="navbar-brand logo" width="5%" src="../static/giveblood.png">
 
     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse6">
       <span class="navbar-toggler-icon"></span>
@@ -60,22 +60,21 @@ background-size: cover;
   </nav>
 
 
-  <div class="box center marginTB">
-
-    <!-- ketu perfundon CARD 1 -->
-    <div class="card">
-      <img class="card-img-top" style="width:50%; margin:0 auto;"
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ8SyFsniTLCC5pw6Y_GFgRuLR6-b4fKGmmGhGgj4Jd0tTuosAI"
-        alt="Card image">
+  <div class="box center marginTB ">
+<center>
+    <div class="card mt-5 mb-5" style="width: 18rem">
+      <img class="card-img-top" src="https://www.searchpng.com/wp-content/uploads/2019/02/Profile-PNG-Icon.png"
+        alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title"><%= emri %> <%= mbiemri %></h5>
         <p class="card-text"> Kontakti: <%= kontakti %> <br> Grupi i gjakut: <%= grgjakut %> <br> Historia: <%= sasia %>
           ml</p>
       </div>
-      <div class="card-footer">
-        <small class="text-muted">Profili i <%= emri %> <%= mbiemri %></small>
-      </div>
     </div>
+  </center>
+
+
+
   </div>
 
 
