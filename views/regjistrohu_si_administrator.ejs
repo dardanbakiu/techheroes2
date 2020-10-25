@@ -77,50 +77,43 @@
 
   
   <center>
-    <h3> <b> Regjistrohu si administrator </b> </h3>
+    <h3> <b> Regjistro nje Infermier/e </b> </h3>
 
-    <form>
+    <form method="POST" action="/nurseRegister">
+    
       <div class="row">
         <div class="col-sm-4"></div>
         <div class="col-sm-4">
           <div class="form-group">
-            <label for="usr">Emri:</label>
-            <input type="text" class="form-control" id="usr">
+            <label for="usr">Emri dhe Mbiemri</label>
+            <input name="emri" type="text" class="form-control" id="usr">
           </div>
-        </div>
-        <div class="col-sm-4"></div>
-      </div>
-
-      <div class="row">
-        <div class="col-sm-4"></div>
-        <div class="col-sm-4">
+           
           <div class="form-group">
-            <label for="usr">Mbiemri:</label>
-            <input type="text" class="form-control" id="usr">
+            <label for="usr">Emri i spitalit</label>
+            <input name="emriSpitalit" type="text" class="form-control" id="usr">
           </div>
           <div class="form-group">
-            <label for="usr"> Id e punes :</label>
-            <input type="text" class="form-control" id="usr">
-          </div>
-          <div class="form-group">
-            <label for="usr">Emri i spitalit:</label>
-            <input type="text" class="form-control" id="usr">
-          </div>
-          <div class="form-group">
-            <label for="usr">Email i spitalit:</label>
-            <input type="text" class="form-control" id="usr">
-          </div>
-          <div class="form-group">
-            <label for="pwd">Password:</label>
-            <input type="password" class="form-control" id="pwd">
+            <label for="usr">Lokacioni</label>
+            <input name="lokacioni" type="text" class="form-control" id="usr">
           </div>
 
+          <div class="form-group">
+            <label for="usr">Email</label>
+            <input name="email" type="email" class="form-control" id="usr">
+          </div>
 
+          <div class="form-group">
+            <label for="pwd">Password</label>
+            <input name="password" type="password" class="form-control" id="pwd">
+          </div>
+
+          <div class="form-group">
+            <input type="submit" id="butoni" style="width:200px" class="btn-danger" value="RUAJ">
+          </div>
     </form>
     <br>
 <br>
-
-<button type="submit" id="butoni" style="width:200px" class="btn-danger ">Regjistrohu</button>
 </center>
 
   

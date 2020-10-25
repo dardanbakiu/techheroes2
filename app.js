@@ -13,24 +13,21 @@ const kyquDhuruesRoute = require('./router/kyquDhuruesRoute');
 const shtoDhuruesRoute = require('./router/shtoDhuruesRoute');
 const shtoMarresRoute = require('./router/shtoMarresRoute');
 const db = require("./model/database");
-const sequelize = require('./model/db')
+const sequelize = require('./model/db') // db connection with sequelize
 const session = require('express-session')
+const Sequelize = require("sequelize"); // Sequelize package
+const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
+const mySessionStore = new SequelizeStore({ //ktu esht errori qe spo na len mu logu me t'paren
+    db: sequelize
+})
 
-
-app.use(session({
-    secret: 'keyboard cat',
-    resave: false,
-    saveUninitialized: true,
-    // expires: new Date(Date.now() + (5*1000))
-    cookie: { maxAge:  30*60*1000 }
-}))
 
 
 app.use('/', express.static('static'));
 app.set('view engine', 'ejs');
 app.set('views', 'views');
-var bodyParser = require("body-parser");
+const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // db.execute('Select * from users')
@@ -41,12 +38,25 @@ app.use(bodyParser.urlencoded({ extended: false }));
 //     console.log(err);
 // });
 
+
+
+app.use(session({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: true,
+    // expires: new Date(Date.now() + (5*1000))
+    cookie: { maxAge: 30 * 60 * 1000 },
+    store: mySessionStore,
+    resave: false, // we support the touch method so per the express-session docs this should be set to false
+    proxy: true, // if you do SSL outside of node.
+
+}))
+
 app.post('/shkyqu', (req, res) => {
-    req.session.destroy(function (err) {
-       res.redirect('/')
+    req.session.destroy((err) => {
+        res.redirect('/')
     })
 })
-
 
 app.use('/', ballinaRoute.route);
 app.use('/', depozitaRoute.route);

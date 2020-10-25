@@ -1,30 +1,61 @@
 const express = require('express');
 const router = express.Router();
+const Nurse = require('../model/Nurse') //modeli per tabelen Admin
+const db = require('../model/db') // lidhja me db
 
 router.get('/kycu_admin', (req, res) => {
     res.render('kycu_si_administrator');
 });
 
 router.post('/kycu_admin_btn', (req, res) => {
-    const body = req.body;
+    const email = req.body.kycu_admin_email;
+    const password = req.body.kycu_admin_password;
 
-    const username = body.kycu_admin_username;
-    const password = body.kycu_admin_password;
+    Nurse.findAll({
+        where: {
+            email: email,
+            password: password
+        }
+    })
+        .then(result => {
+            const dbEmail = result[0].dataValues.email
+            const dbPw = result[0].dataValues.password
+        
+            console.log(`db email ${dbEmail} db pw: ${dbPw}`)
+        
+            const isLogged = (dbEmail === email && dbPw === password) ? true : false
+        
+            console.log(isLogged)
+        
+            if (isLogged) {
+                req.session.AdminIsLoggedSession = email
+                console.log(req.session.AdminIsLoggedSession)
+                
+                res.redirect(`/depozita`)
+            }
+    
+        })
+        .catch(err => {
+            res.redirect('/kycu_admin')
+        })
+    
+    // const body = req.body;
 
-    // console.log(username + " " + password);
-    if ((username == "admin") && (password == "admin")) {
-        console.log("Admin is logged");
-        req.session.AdminIsLoggedSession = username
-        console.log(req.session.AdminIsLoggedSession)
+    // const username = body.kycu_admin_username;
+    // const password = body.kycu_admin_password;
 
-        res.redirect(`/depozita`)
-    }
-    else {
-        global.admin.logged = false;
-        console.log(global.admin.logged);
-        console.log(password);
-        res.redirect('/kycu_admin');
-    }
+    // // console.log(username + " " + password);
+    // if ((username == "admin") && (password == "admin")) {
+    //     console.log("Admin is logged");
+    //     req.session.AdminIsLoggedSession = username
+    //     console.log(req.session.AdminIsLoggedSession)
+
+    //     res.redirect(`/depozita`)
+    // }
+    // else {
+    //     console.log(password);
+    //     res.redirect('/kycu_admin');
+    // }
 
     
 });

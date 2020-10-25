@@ -14,7 +14,12 @@ router.get('/profili_dhuruesit/:email', userAuthMiddleware, (req, res) => {
         }
     })
         .then(user => {
-            const { email,emri, mbiemri, kontakti, grgjakut } = user.dataValues
+            // const { email,emri, mbiemri, kontakti, grgjakut } = user.dataValues
+            const email = user.dataValues.email
+            const emri = user.dataValues.emri
+            const mbiemri = user.dataValues.mbiemri
+            const kontakti = user.dataValues.kontakti
+            const grgjakut = user.dataValues.grgjakut
 
             Donor.findOne({
                 where: {
