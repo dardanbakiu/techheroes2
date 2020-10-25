@@ -4,7 +4,7 @@ const Nurse = require('../model/Nurse')
 const adminAuthMiddleware = require('../middleware/adminAuthMiddleWare');
 
 
-router.get('/adminRegister', (req, res) => {
+router.get('/adminRegister', adminAuthMiddleware,(req, res) => {
     res.render('regjistrohu_si_administrator');
 });
 

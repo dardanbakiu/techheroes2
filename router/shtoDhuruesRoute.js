@@ -4,9 +4,9 @@ const db = require("../model/database");
 
 const Donors = require('../model/Donors')
 const Deposits = require('../model/Deposits')
-const adminAuthMiddleware = require('../middleware/adminAuthMiddleWare');
+const nurseAuthMiddleware = require('../middleware/nurseAuthMiddleWare');
 
-router.get('/shto_dhurues',adminAuthMiddleware, (req, res) => {
+router.get('/shto_dhurues',nurseAuthMiddleware, (req, res) => {
     res.render('shto_dhurues');
 });
 

@@ -12,6 +12,7 @@ const kyquAdminRoute = require('./router/kyquAdminRoute');
 const kyquDhuruesRoute = require('./router/kyquDhuruesRoute');
 const shtoDhuruesRoute = require('./router/shtoDhuruesRoute');
 const shtoMarresRoute = require('./router/shtoMarresRoute');
+const admin = require('./router/admin')
 const db = require("./model/database");
 const sequelize = require('./model/db') // db connection with sequelize
 const session = require('express-session')
@@ -58,6 +59,7 @@ app.post('/shkyqu', (req, res) => {
     })
 })
 
+app.use('/', admin.route)
 app.use('/', ballinaRoute.route);
 app.use('/', depozitaRoute.route);
 app.use('/', listaDhuruesveRoute.route);

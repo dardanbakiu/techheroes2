@@ -1,5 +1,5 @@
 AdminIsLoogedMiddleware = (req,res,next) => {
-    if(!req.session.AdminIsLoggedSession) {
+    if(!req.session.adminIsLoggedSession) {
         res.redirect('/')
     }
 

@@ -3,9 +3,9 @@ const router = express.Router();
 const db = require("../model/database");
 const Receivers = require('../model/Receivers')
 const Deposits = require('../model/Deposits')
-const adminAuthMiddleware = require('../middleware/adminAuthMiddleWare');
+const nurseAuthMiddleware = require('../middleware/nurseAuthMiddleWare');
 
-router.get('/shto_marres',adminAuthMiddleware, (req, res) => {
+router.get('/shto_marres',nurseAuthMiddleware, (req, res) => {
     res.render('shto_marres');
 });
 

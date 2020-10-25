@@ -2,11 +2,11 @@ const express = require('express');
 const router = express.Router();
 const db = require("../model/database");
 const Deposits = require('../model/Deposits')
-const adminAuthMiddleware = require('../middleware/adminAuthMiddleWare');
+const nurseAuthMiddleware = require('../middleware/nurseAuthMiddleWare');
 
 // const User = require("../models/users");
 
-router.get('/depozita',adminAuthMiddleware, (req, res) => {
+router.get('/depozita',nurseAuthMiddleware, (req, res) => {
      Deposits.findAll()
         .then(rows => {
 

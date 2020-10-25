@@ -28,8 +28,8 @@ router.post('/kycu_admin_btn', (req, res) => {
             console.log(isLogged)
         
             if (isLogged) {
-                req.session.AdminIsLoggedSession = email
-                console.log(req.session.AdminIsLoggedSession)
+                req.session.NurseIsLoggedSession = email
+                console.log(req.session.NurseIsLoggedSession)
                 
                 res.redirect(`/depozita`)
             }
