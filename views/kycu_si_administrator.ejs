@@ -3,7 +3,7 @@
 
 <head>
   <title>Dhuro gjak,shpëto jetë!</title>
-  <link href = "giveblood.png"  rel="icon" type="image/gif">
+  <link href="giveblood.png" rel="icon" type="image/gif">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Bootstrap4 -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -18,7 +18,7 @@
     integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
     crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="generalStyle.css">
+  <link rel="stylesheet" href="generalStyle.css">
   <!-- / Boostrap4 -->
   <link rel="stylesheet" href="navAndFooter.css">
   <link rel="stylesheet" href="kycu.css">
@@ -27,10 +27,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-<style>
+  <style>
 
-  
-</style>
+
+  </style>
 </head>
 
 <body>
@@ -46,7 +46,7 @@
         <li class="nav-item  active">
           <a class="nav-item nav-link active" href="/">Ballina</a>
         </li>
-        
+
         <li class="nav-item  active">
           <a class="nav-item nav-link active" href="/regjistrohu_si_dhurues">Regjistrohu si dhurues</a>
         </li>
@@ -63,11 +63,11 @@
       </div>
     </div>
   </nav>
- 
+
   <section class="marginTB">
     <center>
       <div class="box">
-        <img width="50px"  src="giveblood.png">
+        <img width="50px" src="giveblood.png">
         <h4> Kyçu si Infermier/e </h4>
         <br>
         <form method="POST" action="kycu_admin_btn">
@@ -78,7 +78,7 @@
                 <!-- <label for="usr">Emaili:</label> -->
                 <input type="email" class="form-control" id="usr" name="kycu_admin_email" placeholder="Email ">
               </div>
-            </div> 
+            </div>
           </div>
 
           <div class="row">
@@ -90,15 +90,16 @@
               </div>
 
               <input type="submit" value="Kyçu" class="btn btn-danger">
-             
+              <br>
+              <%- error %>
         </form>
       </div>
     </center>
   </section>
-  
- 
-    <!----------- Footer ------------>
-    <%- include ('partials/footer.ejs') %>
+
+
+  <!----------- Footer ------------>
+  <%- include ('partials/footer.ejs') %>
 
 
 </body>

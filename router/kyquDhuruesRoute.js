@@ -12,7 +12,7 @@ const loginErrorStatement = {
 };
 
 router.get('/kycu_dhurues', (req, res) => {
-    res.render('kycu_si_dhurues', { errorStatement: loginErrorStatement.noerror });
+    res.render('kycu_si_dhurues', { error: " " });
 });
 
 router.post('/kycu_dhurues_form', async (req, res) => {
@@ -29,26 +29,26 @@ router.post('/kycu_dhurues_form', async (req, res) => {
         .then(result => {
             const dbEmail = result[0].dataValues.email
             const dbPw = result[0].dataValues.password
-        
+
             console.log(`db email ${dbEmail} db pw: ${dbPw}`)
-        
+
             const isLogged = (dbEmail === email && dbPw === password) ? true : false
-        
+
             console.log(isLogged)
-        
+
             if (isLogged) {
                 req.session.isLoggedSession = email
                 console.log(req.session.isLoggedSession)
-                
+
                 res.redirect(`/profili_dhuruesit/${email}`)
             }
-    
+
         })
         .catch(err => {
-            res.redirect('/kycu_dhurues')
+            res.render('kycu_si_dhurues', { error: "email ose password jane gabim" })
         })
 
-    
+
     // ///////////////////////////////////////////////////////
 
     // db.execute("SELECT * FROM users where email='" + email + "' and password='" + password + "';", (error, rows, fields) => {

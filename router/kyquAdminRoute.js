@@ -4,7 +4,7 @@ const Nurse = require('../model/Nurse') //modeli per tabelen Admin
 const db = require('../model/db') // lidhja me db
 
 router.get('/kycu_admin', (req, res) => {
-    res.render('kycu_si_administrator');
+    res.render('kycu_si_administrator', { error: " " });
 });
 
 router.post('/kycu_admin_btn', (req, res) => {
@@ -20,25 +20,25 @@ router.post('/kycu_admin_btn', (req, res) => {
         .then(result => {
             const dbEmail = result[0].dataValues.email
             const dbPw = result[0].dataValues.password
-        
+
             console.log(`db email ${dbEmail} db pw: ${dbPw}`)
-        
+
             const isLogged = (dbEmail === email && dbPw === password) ? true : false
-        
+
             console.log(isLogged)
-        
+
             if (isLogged) {
                 req.session.NurseIsLoggedSession = email
                 console.log(req.session.NurseIsLoggedSession)
-                
+
                 res.redirect(`/depozita`)
             }
-    
+
         })
         .catch(err => {
-            res.redirect('/kycu_admin')
+            res.render('kycu_si_administrator', { error: "email ose password jane gabim" })
         })
-    
+
     // const body = req.body;
 
     // const username = body.kycu_admin_username;
@@ -57,7 +57,7 @@ router.post('/kycu_admin_btn', (req, res) => {
     //     res.redirect('/kycu_admin');
     // }
 
-    
+
 });
 
 router.post('/dil', (req, res) => {
