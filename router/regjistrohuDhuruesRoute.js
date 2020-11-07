@@ -2,10 +2,20 @@ const express = require('express');
 const router = express.Router();
 const db = require("../model/database");
 const User = require('../model/User')
-
+const { v4: uuidv4 } = require('uuid');
+const nodemailer = require('nodemailer');
+require('dotenv').config();
 
 router.get('/regjistrohu_si_dhurues', (req, res) => {
     res.render('regjistrohu_si_dhurues');
+});
+
+const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: 'fitim.mehmeti00@gmail.com',
+        pass: process.env.EMAIL_PW
+    }
 });
 
 router.post("/user_reg", (req, res) => {
@@ -30,6 +40,9 @@ router.post("/user_reg", (req, res) => {
         }
         else {
             console.log(`Ky user nuk egziston`)
+
+            const uuid = uuidv4()
+
             User.create({
                 emri: reg_user_emri,
                 mbiemri: reg_user_mbiemri,
@@ -39,9 +52,30 @@ router.post("/user_reg", (req, res) => {
                 password: reg_user_password,
                 grgjakut: reg_user_gr_gjakut,
                 semundje: reg_user_semundje,
-                tatoo: reg_user_tatoo
+                tatoo: reg_user_tatoo,
+                verified: 'false',
+                uuid: uuid
             })
                 .then(() => {
+                    //ketu duhet me programu me dergu ne email linkun
+
+                    const domain = process.env.DOMAIN
+
+                    const mailOptions = {
+                        from: process.env.EMAIL,
+                        to: reg_user_email,
+                        subject: 'Verifiko Llogarine - Dhuro Gjak',
+                        text: `Kliko ne kete link qe llogaria jauj te verifikohet ${domain}/verify/${uuid} `
+                    };
+
+                    transporter.sendMail(mailOptions, (error, info) => {
+                        if (error) {
+                            console.log(error);
+                        } else {
+                            console.log('Email sent: ' + info.response);
+                        }
+                    });
+
                     res.redirect('/kycu_dhurues');
                 })
                 .catch(err => {
@@ -52,7 +86,8 @@ router.post("/user_reg", (req, res) => {
         console.log(err)
     })
 
-
 });
+
+
 
 exports.route = router;

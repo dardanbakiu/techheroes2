@@ -18,12 +18,13 @@ const sequelize = require('./model/db') // db connection with sequelize
 const session = require('express-session')
 const Sequelize = require("sequelize"); // Sequelize package
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
+require('dotenv').config()
+
+console.log(process.env.EMAIL_PW)
 
 const mySessionStore = new SequelizeStore({ //ktu esht errori qe spo na len mu logu me t'paren
     db: sequelize
 })
-
-
 
 app.use('/', express.static('static'));
 app.set('view engine', 'ejs');
