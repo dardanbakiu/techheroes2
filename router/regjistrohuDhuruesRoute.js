@@ -89,5 +89,23 @@ router.post("/user_reg", (req, res) => {
 });
 
 
+router.get('/verify/:uuid', (req, res) => {
+    const email_UUID = req.params.uuid
+
+    User.update({ verified: "true" }, {
+        where: {
+            uuid: email_UUID
+        }
+    })
+        .then(result => {
+            // ktu duhet me e ba nje faqe ne front end qe llogaria u verifikua me sukses
+            res.render("llogaria_u_verifikua")
+        })
+        .catch(err => {
+            console.log(err)
+        })
+
+})
+
 
 exports.route = router;
