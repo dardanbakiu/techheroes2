@@ -7,7 +7,7 @@ const nodemailer = require('nodemailer');
 require('dotenv').config();
 
 router.get('/regjistrohu_si_dhurues', (req, res) => {
-    res.render('regjistrohu_si_dhurues');
+    res.render('regjistrohu_si_dhurues', { error: " " });
 });
 
 const transporter = nodemailer.createTransport({
@@ -36,7 +36,7 @@ router.post("/user_reg", (req, res) => {
     }).then(result => {
         if (result) {
             console.log(`useri ekziston`)
-            res.redirect('/')
+            res.render('regjistrohu_si_dhurues', { error: "Ju tashme keni nje llogari" });
         }
         else {
             console.log(`Ky user nuk egziston`)
@@ -76,7 +76,9 @@ router.post("/user_reg", (req, res) => {
                         }
                     });
 
-                    res.redirect('/kycu_dhurues');
+
+                    // Ktu posht duhet me e bo qe met qu te faqja kontrollo emailin etj etj
+                    res.render('verifiko_llogarine');
                 })
                 .catch(err => {
                     res.redirect('/')
