@@ -20,18 +20,18 @@ router.post('/kycu_admin_btn', (req, res) => {
         .then(result => {
             const dbEmail = result[0].dataValues.email
             const dbPw = result[0].dataValues.password
+            const verified = result[0].dataValues.verified
 
-            console.log(`db email ${dbEmail} db pw: ${dbPw}`)
+            if (dbEmail === email && dbPw === password) {
+                if (verified === 'true') {
+                    req.session.NurseIsLoggedSession = email
+                    console.log(req.session.NurseIsLoggedSession)
 
-            const isLogged = (dbEmail === email && dbPw === password) ? true : false
-
-            console.log(isLogged)
-
-            if (isLogged) {
-                req.session.NurseIsLoggedSession = email
-                console.log(req.session.NurseIsLoggedSession)
-
-                res.redirect(`/depozita`)
+                    res.redirect(`/depozita`)
+                }
+                else {
+                    res.render('kycu_si_administrator', { error: "Verifikoni llogarine tuaj permes Email-it" })
+                }
             }
 
         })

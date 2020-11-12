@@ -51,7 +51,7 @@ router.post("/nurseRegister", (req, res) => {
 
                     const mailOptions = {
                         from: process.env.EMAIL,
-                        to: reg_user_email,
+                        to: email,
                         subject: 'Verifiko Admin Llogarine - Dhuro Gjak',
                         text: `Kliko ne kete link qe llogaria jauj te verifikohet ${domain}/verify/nurse/${uuid} `
                     };
