@@ -6,8 +6,8 @@ const Donors = require('../model/Donors')
 const Deposits = require('../model/Deposits')
 const nurseAuthMiddleware = require('../middleware/nurseAuthMiddleWare');
 
-router.get('/shto_dhurues',nurseAuthMiddleware, (req, res) => {
-    res.render('shto_dhurues');
+router.get('/shto_dhurues', nurseAuthMiddleware, (req, res) => {
+    res.render('shto_dhurues', { isAdded: " " });
 });
 
 router.post('/shto_dhurues_form', async (req, res) => {
@@ -35,8 +35,8 @@ router.post('/shto_dhurues_form', async (req, res) => {
                     Bnegativ: 0,
                     ABnegativ: 0,
                     ABpozitiv: 0,
-                    Opozitiv: 0,    
-                    Onegativ:0
+                    Opozitiv: 0,
+                    Onegativ: 0
                 })
             }
 
@@ -48,8 +48,8 @@ router.post('/shto_dhurues_form', async (req, res) => {
                     Bnegativ: 0,
                     ABnegativ: 0,
                     ABpozitiv: 0,
-                    Opozitiv: 0,    
-                    Onegativ:0
+                    Opozitiv: 0,
+                    Onegativ: 0
                 })
             }
 
@@ -61,8 +61,8 @@ router.post('/shto_dhurues_form', async (req, res) => {
                     Bnegativ: 0,
                     ABnegativ: 0,
                     ABpozitiv: 0,
-                    Opozitiv: 0,    
-                    Onegativ:0
+                    Opozitiv: 0,
+                    Onegativ: 0
                 })
             }
 
@@ -74,8 +74,8 @@ router.post('/shto_dhurues_form', async (req, res) => {
                     Bnegativ: shto_dhurues_sasia,
                     ABnegativ: 0,
                     ABpozitiv: 0,
-                    Opozitiv: 0,    
-                    Onegativ:0
+                    Opozitiv: 0,
+                    Onegativ: 0
                 })
             }
 
@@ -87,8 +87,8 @@ router.post('/shto_dhurues_form', async (req, res) => {
                     Bnegativ: 0,
                     ABnegativ: 0,
                     ABpozitiv: shto_dhurues_sasia,
-                    Opozitiv: 0,    
-                    Onegativ:0
+                    Opozitiv: 0,
+                    Onegativ: 0
                 })
             }
 
@@ -100,8 +100,8 @@ router.post('/shto_dhurues_form', async (req, res) => {
                     Bnegativ: 0,
                     ABnegativ: shto_dhurues_sasia,
                     ABpozitiv: 0,
-                    Opozitiv: 0,    
-                    Onegativ:0
+                    Opozitiv: 0,
+                    Onegativ: 0
                 })
             }
 
@@ -113,8 +113,8 @@ router.post('/shto_dhurues_form', async (req, res) => {
                     Bnegativ: 0,
                     ABnegativ: 0,
                     ABpozitiv: 0,
-                    Opozitiv: 0,    
-                    Onegativ:shto_dhurues_sasia
+                    Opozitiv: 0,
+                    Onegativ: shto_dhurues_sasia
                 })
             }
 
@@ -126,13 +126,13 @@ router.post('/shto_dhurues_form', async (req, res) => {
                     Bnegativ: 0,
                     ABnegativ: 0,
                     ABpozitiv: 0,
-                    Opozitiv: shto_dhurues_sasia,    
-                    Onegativ:0
+                    Opozitiv: shto_dhurues_sasia,
+                    Onegativ: 0
                 })
             }
         })
         .then(() => {
-            res.redirect('/')
+            res.render('shto_dhurues', { isAdded: "U shtua me sukses" });
         })
         .catch(err => console.log(err))
 
