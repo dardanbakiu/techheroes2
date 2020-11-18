@@ -8,9 +8,9 @@
 
     <style>
         /* Per llaptop */
-        @media only screen and (min-width: 600px) {
+        @media screen and (min-width: 600px) {
             body {
-                font-family: Arial, Helvetica, sans-serif;
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
                 background-color: #f4f4f4;
                 background: linear-gradient(#fffbf5, #ffffff);
                 margin: 0 10%;
@@ -52,6 +52,7 @@
 
             nav {
                 border-radius: 10px solid black;
+
             }
 
             #main {
@@ -62,14 +63,76 @@
             .container {
                 margin: 5%;
             }
+
+            #hamburger {
+                display: none;
+            }
         }
 
-        /* per telefon
-        @media only screen and (min-width: 600px) {
+        /* per telefon */
+        @media screen and (max-width: 600px) {
             body {
-                background-color: black
+                font-family: Arial, Helvetica, sans-serif;
+                background-color: #f4f4f4;
+                background: linear-gradient(#fffbf5, #ffffff);
+                margin: 5%;
             }
-        } */
+
+            nav ul li a {
+                text-decoration: none;
+                transition: all .15s ease-in;
+                color: black;
+                border-bottom: 10px;
+                border-bottom: 1px solid transparent;
+            }
+
+
+            nav ul li {
+                list-style-type: none;
+                border-bottom: 1px solid transparent;
+            }
+
+            nav ul li a:hover {
+                text-decoration: none;
+                padding-bottom: 1%;
+                border-bottom: 1px solid black;
+            }
+
+
+
+            nav ul {
+                display: block;
+
+            }
+
+            nav {
+                border-radius: 10px solid black;
+                position: sticky;
+                top: auto;
+            }
+
+            .link {
+                margin: 3% 35%;
+                color: white;
+                width: 100%;
+
+            }
+
+
+            .headerNav {
+                display: flex;
+            }
+
+            .headerNav #hamburger {
+                flex-grow: 1;
+            }
+
+            .headerNav #img {
+                flex-grow: 4;
+            }
+
+
+        }
     </style>
 
 </head>
@@ -78,12 +141,20 @@
 <body>
     <nav>
         <ul>
-            <li id="logo"><img src="giveblood.png" width="30" alt=""></li>
+            <div id="logo" class="headerNav">
+                <li class="inline" id="img"><img src="giveblood.png" width="40" alt=""></li>
+
+                <li onclick="showHide()" class="inline" id="hamburger"><img id="navbarHMB" width="40"
+                        src="hamburger.png" alt=""></li>
+            </div>
+
             <li class="link"><a href="">Home</a></li>
             <li class="link"><a href="">About</a></li>
             <li class="link"><a href="">Contact</a></li>
             <li class="link"><a href="">Admin</a></li>
+
         </ul>
+        <hr class="navHR">
     </nav>
 
 
@@ -104,12 +175,29 @@
 
 
     <script>
-        function responsive() {
-            var x = document.getElementById("myTopnav");
-            if (x.className === "topnav") {
-                x.className += " responsive";
-            } else {
-                x.className = "topnav";
+        function showHide() {
+            let elements = document.getElementsByClassName("link");
+
+            let toggle = false
+
+            for (let i = 0; i < elements.length; i++) {
+
+                if (elements[i].style.display !== 'none') {
+                    elements[i].style.display = 'none'
+                    toggle = false
+                }
+                else if (elements[i].style.display !== 'block') {
+                    elements[i].style.display = 'block'
+                    toggle = true
+                }
+
+            }
+
+            if (toggle) {
+                document.getElementById('navbarHMB').src = 'x.png'
+            }
+            else {
+                document.getElementById('navbarHMB').src = 'hamburger.png'
             }
         }
     </script>
