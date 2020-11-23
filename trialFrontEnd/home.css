@@ -1,0 +1,19 @@
+
+/* Per llaptop */
+@media screen and (min-width: 600px) {
+   
+    #main {
+        margin: 5% 0;
+        display: flex;
+    }
+
+    .container {
+        margin: 5%;
+    }
+
+}
+
+/* per telefon */
+@media screen and (max-width: 600px) {
+  
+}

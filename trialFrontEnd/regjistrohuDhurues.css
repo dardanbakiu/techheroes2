@@ -1,0 +1,8 @@
+.container {
+    /* height: 80vh; */
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+}
