@@ -1,221 +1,102 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <title>Dhuro gjak,shpëto jetë!</title>
-  <link href="giveblood.png" rel="icon" type="image/gif">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- CSS only -->
-  <!-- Bootstrap4 -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-    crossorigin="anonymous"></script>
-  <!-- / Boostrap4 -->
-
-  <link rel="stylesheet" href="card.css">
-  <link rel="stylesheet" href="generalStyle.css">
-  <link rel="stylesheet" href="navAndFooter.css">
-  <link href="style.css" rel="stylesheet" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Home Page</title>
 
-  <style>
-    body {
-      background: linear-gradient(#fffbf5, #ffffff);
-    }
-  </style>
+  <link rel="stylesheet" href="/style/navbar.css">
+  <link rel="stylesheet" href="/style/home.css">
+
+
 </head>
 
+
 <body>
+  <nav>
+    <ul>
+      <div id="logo" class="headerNav">
+        <li class="inline" id="img"><img src="img/giveblood.png" width="40" alt=""></li>
 
-  <nav style="" class="navbar navbar-expand-lg navbar navbar-light bg-light">
-    <img class="navbar-brand logo" width="5%" src="giveblood.png">
-
-    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse6">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarCollapse6">
-      <div class="navbar-nav">
-        <li class="nav-item  active">
-          <a class="nav-item nav-link active" href="/">Ballina</a>
-        </li>
-
-        <li class="nav-item  active">
-          <a class="nav-item nav-link active" href="/regjistrohu_si_dhurues">Regjistrohu si dhurues</a>
-        </li>
-
-        <li class="nav-item active">
-          <a class="nav-item nav-link active" href="/kycu_dhurues">Kycu si dhurues</a>
-        </li>
+        <li onclick="showHide()" class="inline" id="hamburger"><img id="navbarHMB" width="40" src="img/hamburger.png"
+            alt=""></li>
       </div>
 
-      <div class="ml-auto p-2  navbar-nav">
-        <li class="nav-item active ">
-          <a class="nav-item nav-link active" href="/kycu_admin"> <img src="nurse.png" height="40" alt=""> </a>
-        </li>
-      </div>
-    </div>
+      <li class="link"><a href="/">Ballina</a></li>
+      <li class="link"><a href="/regjistrohu_si_dhurues">Regjistrohu</a></li>
+      <li class="link"><a href="/kycu_dhurues">Kycu</a></li>
+
+      <li class="link"><a href="/kycu_admin"><img width="40" src="img/nurse.png" alt=""></a></li>
+    </ul>
+    <hr class="navHR">
   </nav>
 
+
   <div class="container">
-    <!-- Ketu fillon body -->
-
-    <!-- ketu eshte logo edhe teksti (permbajtja) -->
-    <div class="row marginTB">
-      <div class="col-md-2"></div>
-      <div class="col-md-4">
-        <img src="logo.png" alt="">
+    <div id="main">
+      <div id="firstDivLeft">
+        <h1 id="titulli">Dhuro Gjak, Shpeto Jetee</h1>
+        <p id="paragrafi">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur quae quam sunt
+          eligendi
+          expedita
+          nobis id? Accusantium rerum quaerat dignissimos facilis aperiam provident, temporibus dolor rem,
+          numquam, quos illum tenetur.</p>
       </div>
-      <div class="col-md-4">
-        <p class="textMedium">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum culpa quam alias dicta!
-          Mollitia natus, ea blanditiis eos in rerum nisi, est sint maxime vitae iure vero neque quisquam
-          exercitationem.</p>
-      </div>
-      <div class="col-md-2"></div>
-    </div>
-    <!-- ketu mbraon logo edhe teksti (permbajtja) -->
-
-
-    <!-- rreshti pare per cards -->
-    <div class="row center">
-      <div class="card col-md-3 marginTB" style="width: 18rem;">
-        <img class="card-img-top" src="https://healthcare.utah.edu/healthfeed/postings/2019/08/tattoo-removal.jpg"
-          alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Kush nuk mund te dhuroje gjak?</h5>
-          <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda quas reprehenderit
-            iste dolorum expedita, ad eaque fuga nulla eveniet totam architecto necessitatibus nisi ullam incidunt
-            obcaecati quae.</p>
-        </div>
-      </div>
-
-      <div class="col-md-1"></div>
-
-      <div class="card col-md-3 marginTB" style="width: 18rem;">
-        <img class="card-img-top" src="https://image.freepik.com/free-vector/set-people-donating-blood_52683-20323.jpg"
-          alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Kush nuk mund te dhuroje gjak?</h5>
-          <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda quas reprehenderit
-            iste dolorum expedita, ad eaque fuga nulla eveniet totam architecto necessitatibus nisi ullam incidunt
-            obcaecati quae.</p>
-        </div>
-      </div>
-
-
-      <div class="col-md-1"></div>
-
-      <div class="card col-md-3 marginTB" style="width: 18rem;">
-        <img class="card-img-top" src="https://i.imgur.com/iG0Xni2.png" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Kush nuk mund te dhuroje gjak?</h5>
-          <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda quas reprehenderit
-            iste dolorum expedita, ad eaque fuga nulla eveniet totam architecto necessitatibus nisi ullam incidunt
-            obcaecati quae.</p>
-        </div>
+      <div>
+        <img src="img/doctors.png" width="100%" alt="" id="doctorImg">
       </div>
     </div>
-    <!-- rreshti pare per cards mbraon ketu -->
 
-
-
-  </div> <!-- Divi qe e mbyll container  -->
-
-
-
-
-
-
-  <!-- <div class="padding">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-6">
-
-          <center> <img src="https://nhsbtdbe.blob.core.windows.net/umbraco-assets-corp/7745/pod-blood-icon.png">
-          </center>
-        </div>
-        <div class="col-md-5">
-          <h2>Dhuro gjak ,shpëto jetë!</h2>
-          <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati quod vero architecto dicta
-            mollitia laboriosam soluta totam eos quasi corporis. Nostrum, labore autem enim accusantium numquam amet
-            quod eligendi perspiciatis.</p>
-        </div>
-      </div>
-    </div>
   </div>
-  <div style="padding: 170px;">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-sm-7">
-      <div class="card" >
-        <img class="card-img-top" style="width: 300px;" height="200px;" src="https://image.freepik.com/free-vector/set-people-donating-blood_52683-20323.jpg" alt="Card image">
-        <div class="card-body">
-          
-            <h4 class="card-title">Pse duhet te dhurojme gjak?</h4>
-             <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda quas reprehenderit iste dolorum expedita, ad eaque fuga nulla eveniet totam architecto necessitatibus nisi ullam incidunt obcaecati quae.</p>
-             
-            </div>
-        </div>
+
+
+
+  <h2 style="text-align: center;">Cfare bene "Dhuro gjak, shpeto jete"?</h2>
+
+  <div class="container">
+    <div id="main">
+      <div id="quest1" class="divQuest">
+        <p class="quest"> <img width="30%" src="./images/bloodQuestion1.png" alt=""> </p>
+        <p class="divQuestP"> Çdo procedurë e dokumentimit të gjakut do të dëshmohet më lehtë.</p>
       </div>
-  
-      <div class="col-sm-5">
-        <div class="card" >
-          <img class="card-img-top" style="width: 300px;" height="200px;" src="https://healthcare.utah.edu/healthfeed/postings/2019/08/tattoo-removal.jpg" alt="Card image">
-          <div class="card-body">
-            
-              <h4 class="card-title">Kush nuk mund te dhuroje gjak?</h4>
-               <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda quas reprehenderit iste dolorum expedita, ad eaque fuga nulla eveniet totam architecto necessitatibus nisi ullam incidunt obcaecati quae.</p>
-               
-              </div>
-          </div>
-        </div>
+      <div id="quest2" class="divQuest">
+        <p class="quest"> <img width="30%" src="./images/bloodQuestion2.png" alt=""> </p>
+        <p class="divQuestP"> Çdo procedurë e dokumentimit të gjakut do të dëshmohet më lehtë.</p>
+      </div>
+      <div id="quest3" class="divQuest">
+        <p class="quest"> <img width="30%" src="./images/bloodQuestion3.png" alt=""> </p>
+        <p class="divQuestP"> Çdo procedurë e dokumentimit të gjakut do të dëshmohet më lehtë.</p>
       </div>
     </div>
-    <hr>
-    <div class="container-fluid">
-<div class="row">
-        <div class="col-sm-7">
-          <div class="card" >
-            <img class="card-img-top" style="width: 300px;" height="200px;"  src="https://www.geetanjalihospital.co.in/images/blood-bank.jpg" alt="Card image">
-            <div class="card-body">
-              
-                <h4 class="card-title">Grupet e gjakut</h4>
-                 <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda quas reprehenderit iste dolorum expedita, ad eaque fuga nulla eveniet totam architecto necessitatibus nisi ullam incidunt obcaecati quae.</p>
-                 
-                </div>
-            </div>
-          </div>
 
-          <div class="col-sm-5">
-            <div class="card" >
-              <img class="card-img-top" style="width: 290px;" height="200px" src="https://i.imgur.com/iG0Xni2.png" alt="Card image">
-              <div class="card-body">
-                
-                  <h4 class="card-title">Procesi i dhurimit te gjakut</h4>
-                   <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda quas reprehenderit iste dolorum expedita, ad eaque fuga nulla eveniet totam architecto necessitatibus nisi ullam incidunt obcaecati quae.</p>
-                   
-                  </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+  </div>
 
-    </div> -->
-
-  <!----------- Footer ------------>
   <%- include ('partials/footer.ejs') %>
 
+
+  <script>
+    let titulli = document.getElementById('titulli').innerHTML
+    titulli = titulli.split('')
+
+    let teksti = ''
+    let indeksi = 0
+
+
+    setInterval(() => {
+
+      if (indeksi < titulli.length) {
+        console.log(teksti)
+        document.getElementById('titulli').innerHTML = teksti
+        teksti += titulli[indeksi]
+        indeksi++
+      }
+    }, 100)
+
+
+  </script>
+  <script src="navbar.js"></script>
 </body>
 
 </html>
+<!----------- Footer ------------>

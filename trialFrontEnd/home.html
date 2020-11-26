@@ -5,9 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
-    <link rel="stylesheet" href="navbar.css">
-    <link rel="stylesheet" href="home.css">
-
+    <link rel="stylesheet" href="../static/style/navbar.css">
+    <link rel="stylesheet" href="../static/style/home.css">
 
 </head>
 
@@ -22,11 +21,11 @@
                         src="images/hamburger.png" alt=""></li>
             </div>
 
-            <li class="link"><a href="">Home</a></li>
-            <li class="link"><a href="">About</a></li>
-            <li class="link"><a href="">Contact</a></li>
-            <li class="link"><a href="">Admin</a></li>
-            <li class="link"><a href=""><img width="40" src="images/nurse.png" alt=""></a></li>
+            <li class="link"><a href="/">Ballina</a></li>
+            <li class="link"><a href="/regjistrohu_si_dhurues">Regjistrohu</a></li>
+            <li class="link"><a href="/kycu_dhurues">Kycu</a></li>
+
+            <li class="link"><a href="/kycu_admin"><img width="40" src="images/nurse.png" alt=""></a></li>
         </ul>
         <hr class="navHR">
     </nav>
@@ -34,25 +33,67 @@
 
     <div class="container">
         <div id="main">
-            <div>
-                <h1>Dhuro Gjak, Shpeto Jete</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur quae quam sunt eligendi
+            <div id="firstDivLeft">
+                <h1 id="titulli">Dhuro Gjak, Shpeto Jetee</h1>
+                <p id="paragrafi">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur quae quam sunt
+                    eligendi
                     expedita
                     nobis id? Accusantium rerum quaerat dignissimos facilis aperiam provident, temporibus dolor rem,
                     numquam, quos illum tenetur.</p>
             </div>
             <div>
-                <img src="images/doctors.png" width="100%" alt="">
+                <img src="images/doctors.png" width="100%" alt="" id="doctorImg">
             </div>
         </div>
-
-
 
     </div>
 
 
-    <script src="navbar.js"></script>
 
+    <h2 style="text-align: center;">Cfare bene "Dhuro gjak, shpeto jete"?</h2>
+
+    <div class="container">
+        <div id="main">
+            <div id="quest1" class="divQuest">
+                <p class="quest"> <img width="30%" src="./images/bloodQuestion1.png" alt=""> </p>
+                <p class="divQuestP"> Çdo procedurë e dokumentimit të gjakut do të dëshmohet më lehtë.</p>
+            </div>
+            <div id="quest2" class="divQuest">
+                <p class="quest"> <img width="30%" src="./images/bloodQuestion2.png" alt=""> </p>
+                <p class="divQuestP"> Çdo procedurë e dokumentimit të gjakut do të dëshmohet më lehtë.</p>
+            </div>
+            <div id="quest3" class="divQuest">
+                <p class="quest"> <img width="30%" src="./images/bloodQuestion3.png" alt=""> </p>
+                <p class="divQuestP"> Çdo procedurë e dokumentimit të gjakut do të dëshmohet më lehtë.</p>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <script>
+        let titulli = document.getElementById('titulli').innerHTML
+        titulli = titulli.split('')
+
+        let teksti = ''
+        let indeksi = 0
+
+
+        setInterval(() => {
+
+            if (indeksi < titulli.length) {
+                console.log(teksti)
+                document.getElementById('titulli').innerHTML = teksti
+                teksti += titulli[indeksi]
+                indeksi++
+            }
+        }, 100)
+
+
+    </script>
+    <script src="navbar.js"></script>
 </body>
 
 </html>
