@@ -8,29 +8,42 @@
 
   <link rel="stylesheet" href="/style/navbar.css">
   <link rel="stylesheet" href="/style/home.css">
+  <link rel="stylesheet" href="/style/general.css">
 
 
 </head>
 
 
 <body>
+
   <nav>
-    <ul>
-      <div id="logo" class="headerNav">
-        <li class="inline" id="img"><img src="img/giveblood.png" width="40" alt=""></li>
-
-        <li onclick="showHide()" class="inline" id="hamburger"><img id="navbarHMB" width="40" src="img/hamburger.png"
-            alt=""></li>
-      </div>
-
-      <li class="link"><a href="/">Ballina</a></li>
-      <li class="link"><a href="/regjistrohu_si_dhurues">Regjistrohu</a></li>
-      <li class="link"><a href="/kycu_dhurues">Kycu</a></li>
-
-      <li class="link"><a href="/kycu_admin"><img width="40" src="img/nurse.png" alt=""></a></li>
+    <div class="logo">
+      <h4><img width="30" src="/img/giveblood.png" alt=""></h4>
+    </div>
+    <ul class="nav-links">
+      <li>
+        <a href="/">Ballina</a>
+      </li>
+      <li>
+        <a href="/regjistrohu_si_dhurues">Regjistrohu</a>
+      </li>
+      <li>
+        <a href="/kycu_dhurues">Kycu</a>
+      </li>
+      <li>
+        <!-- <a href="/kycu_admin"><img width="25" src="img/nurse.png"></a> -->
+      </li>
     </ul>
-    <hr class="navHR">
+
+    <div class="burger">
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
+    </div>
   </nav>
+
+  <script src="/scripts/app.js"></script>
+
 
 
   <div class="container">
@@ -44,7 +57,7 @@
           numquam, quos illum tenetur.</p>
       </div>
       <div>
-        <img src="img/doctors.png" width="100%" alt="" id="doctorImg">
+        <img src="img/doctors.png" width="80%" alt="" id="doctorImg">
       </div>
     </div>
 
@@ -57,15 +70,15 @@
   <div class="container">
     <div id="main">
       <div id="quest1" class="divQuest">
-        <p class="quest"> <img width="30%" src="./images/bloodQuestion1.png" alt=""> </p>
+        <p class="quest"> <img width="30%" src="img/bloodQuestion1.png" alt=""> </p>
         <p class="divQuestP"> Çdo procedurë e dokumentimit të gjakut do të dëshmohet më lehtë.</p>
       </div>
       <div id="quest2" class="divQuest">
-        <p class="quest"> <img width="30%" src="./images/bloodQuestion2.png" alt=""> </p>
+        <p class="quest"> <img width="30%" src="img/bloodQuestion2.png" alt=""> </p>
         <p class="divQuestP"> Çdo procedurë e dokumentimit të gjakut do të dëshmohet më lehtë.</p>
       </div>
       <div id="quest3" class="divQuest">
-        <p class="quest"> <img width="30%" src="./images/bloodQuestion3.png" alt=""> </p>
+        <p class="quest"> <img width="30%" src="img/bloodQuestion3.png" alt=""> </p>
         <p class="divQuestP"> Çdo procedurë e dokumentimit të gjakut do të dëshmohet më lehtë.</p>
       </div>
     </div>
@@ -95,7 +108,7 @@
 
 
   </script>
-  <script src="navbar.js"></script>
+  <!-- <script src="navbar.js"></script> -->
 </body>
 
 </html>
