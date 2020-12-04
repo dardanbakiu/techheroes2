@@ -5,11 +5,19 @@ body {
     /* margin: 0 10%; */
 }
 
+.content {
+    margin: 0 15%;
+}
+
 @media screen and (max-width: 600px) { */
      body {
         font-family: Arial, Helvetica, sans-serif;
         background-color: #f4f4f4;
         background: linear-gradient(#ddd, #ffffff);
         margin: 0%;
+    }
+
+    .content {
+
     }
 }

@@ -9,6 +9,8 @@
     #main {
         margin: 5% 0;
         display: flex;
+        /* animation: MoveText 3s; */
+        
     }
 
     .container {
@@ -16,17 +18,46 @@
     }
 
     #doctorImg {
-        border-radius: 50%;
+        /* 
         -webkit-transition: -webkit-transform .2s ease-in-out;
-                transition:         transform .2s ease-in-out;
+                transition:         transform .2s ease-in-out; */
+        animation: MoveImages 3s;
     }
-    #doctorImg:hover {
+    /* #doctorImg:hover {
         -moz-transform: scaleX(-1);
         -webkit-transform: scaleX(-1);
         -o-transform: scaleX(-1);
         transform: scaleX(-1);
-        -ms-filter: fliph; /*IE*/
-        filter: fliph; /*IE*/
+        -ms-filter: fliph; 
+        filter: fliph; 
+    } */
+
+    @keyframes MoveImages {
+        0% {
+            transform: translate(250px, 0px);
+            opacity: 0.3;
+        }
+
+        100%{
+            transform: translate(0px, 0px);
+            opacity: 1;
+        }
+    }
+
+    #paragrafi {
+        animation: MoveText 3s;
+    }
+
+    @keyframes MoveText {
+        0% {
+            transform: translate(0px, 250px);
+            opacity: 0.3;
+        }
+
+        100%{
+            transform: translate(0px, 0px);
+            opacity: 1;
+        }
     }
 
     .quest{
