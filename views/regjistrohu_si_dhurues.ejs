@@ -6,26 +6,7 @@
   <title>Dhuro gjak,shpëto jetë!</title>
   <link href="giveblood.png" rel="icon" type="image/gif">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Bootstrap4 -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-    crossorigin="anonymous"></script>
 
-  <link rel="stylesheet" href="generalStyle.css">
-
-  <!-- / Boostrap4 -->
-  <link rel="stylesheet" href="navAndFooter.css">
-
-  <link rel="stylesheet" href="regjistrohusidhurues.css">
-  <link href="style.css" rel="stylesheet" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -66,143 +47,42 @@
 
   <%- error %>
 
-    <form method="POST" action="user_reg">
-      <div class="center">
-        <div class="box marginTB">
-          <div class="center"><img width="50px" src="giveblood.png"></div>
-          <h2 class="center mb-5">Regjistrohu</h2>
-          <form method="POST" action="user_reg">
-            <input type="text" name="reg_user_emri" id="" placeholder="Emri">
-            <input type="text" name="reg_user_mbiemri" id="" placeholder="Mbiemri">
+    <div class="centerForm">
+      <label class="mainLabel">Regjistrohu Si Dhurues </label>
+      <div class="formBox marginTB ">
+        <form method="POST" action="user_reg">
+          <input type="text" name="reg_user_emri" id="" placeholder="Emri">
+          <input type="text" name="reg_user_mbiemri" id="" placeholder="Mbiemri">
 
-            <label for="ditelindja">Ditelindja</label>
-            <input type="date" name="reg_user_dtl" id="ditelindja" required>
-            <input type="number" name="reg_user_kontakti" id="" placeholder="Kontakti" required>
-            <input type="email" name="reg_user_email" id="" placeholder="email" required>
-            <input type="password" name="reg_user_password" id="" placeholder="Fjalekalimi" required>
-            <input type="password" name="" id="" placeholder="" required>
-            <select name="reg_user_gr_gjakut" required>
-              <option value="" disabled selected>Grupi i Gjakut</option>
-              <option value="A-">A-</option>
-              <option value="A+">A+</option>
-              <option value="B-">B-</option>
-              <option value="B+">B+</option>
-              <option value="AB-">AB-</option>
-              <option value="AB+">AB+</option>
-              <option value="O+">0-</option>
-              <option value="O+">0+</option>
-            </select>
+          <select name="reg_user_gr_gjakut" required>
+            <option value="" disabled selected>Grupi i Gjakut</option>
+            <option value="A-">A-</option>
+            <option value="A+">A+</option>
+            <option value="B-">B-</option>
+            <option value="B+">B+</option>
+            <option value="AB-">AB-</option>
+            <option value="AB+">AB+</option>
+            <option value="O+">0-</option>
+            <option value="O+">0+</option>
+          </select>
 
-            <select name="reg_user_semundje" required>
-              <option value="" disabled selected>semundje?</option>
-              <option value="jo">Jo</option>
-              <option value="po">Po</option>
-            </select>
+          <label for="ditelindja">Ditelindja</label>
+          <input type="date" name="reg_user_dtl" id="ditelindja" required>
+          <input type="number" name="reg_user_kontakti" id="" placeholder="Kontakti" required>
+          <input type="email" name="reg_user_email" id="" placeholder="email" required>
+          <input type="password" name="reg_user_password" id="" placeholder="Fjalekalimi" required>
+          <!-- <input type="password" name="" id="" placeholder="" required> -->
 
-            <input type="submit" name="" id="">
-          </form>
+          <select name="reg_user_semundje" required>
+            <option value="" disabled selected>semundje ngjitese?</option>
+            <option value="jo">Jo</option>
+            <option value="po">Po</option>
+          </select>
 
-
-
-
-
-        </div>
-
+          <input type="submit" value="Regjistrohu">
+        </form>
       </div>
-    </form>
-
-    <!-- <script>
-    document.getElementById("submit").addEventListener('click', e => {
-      let firstPassword = document.getElementById('firstPassword').value
-      let secondPassword = document.getElementById('secondPassword').value
-
-      let name = document.getElementById('id_emri').value
-      let surname = document.getElementById('id_mbiemri').value
-
-      let email = document.getElementById('email_id').value
-
-      let aPozitivChecked = document.getElementById('aPozitiv')
-      let aNegativChecked = document.getElementById('aNegativ')
-      let bPozitivChecked = document.getElementById('bPozitiv')
-      let bNegativChecked = document.getElementById('bNegativ')
-      let abNegativChecked = document.getElementById('abNegativ')
-      let abPozitivChecked = document.getElementById('abPozitiv')
-      let zeroNegativChecked = document.getElementById('zeroNegativ')
-      let zeroPozitivChecked = document.getElementById('zeroPozitiv')
-
-      let bloodTypeValue = null
-
-      if (email == "") {
-        e.preventDefault()
-        document.getElementById('emailError').innerHTML = "Kerkohet Email!"
-      }
-
-      if (aPozitivChecked.checked) {
-        e.preventDefault()
-        bloodTypeValue = aPozitivChecked.value
-      }
-
-      if (aNegativChecked.checked) {
-        e.preventDefault()
-        bloodTypeValue = aNegativChecked.value
-      }
-
-      if (bNegativChecked.checked) {
-        e.preventDefault()
-        bloodTypeValue = bNegativChecked.value
-      }
-
-      if (bPozitivChecked.checked) {
-        e.preventDefault()
-        bloodTypeValue = bPozitivChecked.value
-      }
-
-      if (abPozitivChecked.checked) {
-        e.preventDefault()
-        bloodTypeValue = abPozitivChecked.value
-      }
-
-      if (abNegativChecked.checked) {
-        e.preventDefault()
-        bloodTypeValue = abNegativChecked.value
-      }
-
-      if (zeroNegativChecked.checked) {
-        e.preventDefault()
-        bloodTypeValue = zeroNegativChecked.value
-      }
-
-      if (zeroPozitivChecked.checked) {
-        e.preventDefault()
-        bloodTypeValue = zeroPozitivChecked.value
-      }
-
-      if (bloodTypeValue === null) {
-        document.getElementById('grGjakut_id').innerHTML = "Nuk eshte selektuar asnjera!"
-      }
-
-      if (bloodTypeValue !== null) {
-        document.getElementById('grGjakut_id').style.display = "none"
-      }
-
-        if (firstPassword !== secondPassword) {
-          e.preventDefault();
-          document.getElementById('passwordError').innerHTML = "Fjalkalimet nuk perputhen"
-        }
-
-      if (name.length < 2) {
-        e.preventDefault();
-        document.getElementById('nameError').innerHTML = "Emri duhet te ket me shume se 2 karaktere"
-      }
-
-      if (surname.length < 2) {
-        e.preventDefault();
-        document.getElementById('surnameError').innerHTML = "Mbiemri duhet te ket me shume se 2 karaktere"
-      }
-
-    })
-  </script> -->
-
+    </div>
     <%- include ('partials/footer.ejs') %>
 
 </body>

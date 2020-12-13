@@ -1,33 +1,88 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
 
+
+@keyframes MoveImages {
+    0% {
+        transform: translate(250px, 0px);
+        opacity: 0.3;
+    }
+
+    100%{
+        transform: translate(0px, 0px);
+        opacity: 1;
+    }
+}
+
 form {
-    /* position: absolute;
-    top:50%;
-    left:50%;
-    transform: translate(-50%,-50%);
-    bottom:10%; */
-    margin: auto;
-    width: 60%;
-    /* padding: 10px; */
+    /* margin: auto; */
+    width: 100%;
+}
+
+.centerForm{
+    width: 30%;
+    margin : 3% auto;
+    animation: MoveImages 1s;
 }
 
 select,input[type=date],input[type=text], input[type=password], input[type=email] , input[type=number] {
     font-family: 'Roboto', sans-serif;
     display: block;
-    outline: none;
-    border-top:0;
-    border-right: 0;
-    border-left: 0;
-    padding:4px;
-    font-size: 150%;
+     outline: none;
+    font-size: 100%;
+    width: 100%;
+    margin-bottom:4%;
+    margin-top:4%;
+    letter-spacing: 1px;
+    padding:10px;
+    border:0;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.1);
+    border-radius:10px;
+}
+
+input[type=submit] {
+    cursor: pointer;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.1);
+    border-radius:10px;
+    font-size: 105%;
     width: 100%;
     margin-bottom:10%;
-    letter-spacing: 2px;
-    text-align: center;
+    letter-spacing: 1px;
+    padding:10px 25%;
+    border:0;
+    font-size: 105%;
+    width: 100%;
 }
 
 label {
     font-family: 'Roboto', sans-serif;
     opacity: .5;
     text-align: center;
+}
+
+.formBox{
+    padding: 5%;
+    background: white;
+    box-shadow: 0 5px 15px rgba(80, 112, 197, 0.5);
+    border-radius: 25px;
+    margin: 3% 0;
+}
+
+.mainLabel {
+    font-size: 150%;
+    display: flex;
+    justify-content: center;
+    box-shadow:5px -6px 25px 1px  rgb(255, 253, 253);
+    border-radius: 100px;
+    
+}
+
+@media screen and (max-width:768px) {
+    .centerForm{
+        width: 80%;
+        margin : 7.5% auto;
+    }
+
+    .mainLabel {
+        font-size: 125%;
+    }
 }

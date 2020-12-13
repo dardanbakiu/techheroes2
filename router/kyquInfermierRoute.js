@@ -3,11 +3,11 @@ const router = express.Router();
 const Nurse = require('../model/Nurse') //modeli per tabelen Admin
 const db = require('../model/db') // lidhja me db
 
-router.get('/kycu_admin', (req, res) => {
-    res.render('kycu_si_administrator', { error: " " });
+router.get('/infermier', (req, res) => {
+    res.render('kycu_si_infermier', { error: " " });
 });
 
-router.post('/kycu_admin_btn', (req, res) => {
+router.post('/kycuInfermier', (req, res) => {
     const email = req.body.kycu_admin_email;
     const password = req.body.kycu_admin_password;
 
@@ -30,13 +30,13 @@ router.post('/kycu_admin_btn', (req, res) => {
                     res.redirect(`/depozita`)
                 }
                 else {
-                    res.render('kycu_si_administrator', { error: "Verifikoni llogarine tuaj permes Email-it" })
+                    res.render('kycu_si_infermier', { error: "Verifikoni llogarine tuaj permes Email-it" })
                 }
             }
 
         })
         .catch(err => {
-            res.render('kycu_si_administrator', { error: "email ose password jane gabim" })
+            res.render('kycu_si_infermier', { error: "email ose password jane gabim" })
         })
 });
 
