@@ -1,3 +1,7 @@
+
+// document.getElementById('nav-links').style.display = 'none'
+
+
 function showHide() {
     let elements = document.getElementsByClassName("link");
 
@@ -7,10 +11,12 @@ function showHide() {
 
         if (elements[i].style.display !== 'none') {
             elements[i].style.display = 'none'
+            document.getElementById('nav-links').style.display = 'none'
             toggle = false
         }
         else if (elements[i].style.display !== 'block') {
             elements[i].style.display = 'block'
+            document.getElementById('nav-links').style.display = 'block'
             toggle = true
         }
 
