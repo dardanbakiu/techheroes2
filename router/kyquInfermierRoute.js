@@ -36,7 +36,7 @@ router.post('/kycuInfermier', (req, res) => {
 
         })
         .catch(err => {
-            res.render('kycu_si_infermier', { error: "email ose password jane gabim" })
+            res.render('kycu_si_infermier', { error: "email/password jane gabim" })
         })
 });
 

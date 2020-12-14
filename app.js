@@ -53,7 +53,7 @@ app.use(session({
 
 }))
 
-app.post('/shkyqu', (req, res) => {
+app.get('/dil', (req, res) => {
     req.session.destroy((err) => {
         res.redirect('/')
     })

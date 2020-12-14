@@ -44,12 +44,15 @@
   <div class="centerForm">
     <label class="mainLabel">Kycu Si Dhurues </label>
     <div class="formBox marginTB ">
-      <form method="POST" action="user_reg">
+      <form method="POST" action="kycu_dhurues_form">
         <input type="email" name="kycu_dhurues_email" placeholder="Email">
         <input type="password" name="kycu_dhurues_pw" placeholder="Password">
         <input type="submit" value="Kycu">
       </form>
     </div>
+    <p style="color:tomato;text-align:center;">
+      <%- error %>
+    </p>
   </div>
 
   <!----------- Footer ------------>

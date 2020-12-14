@@ -1,5 +1,14 @@
 
 /* Per llaptop */
+.divQuestP {
+    text-align: center;
+}
+
+#infermierLogo {
+    /* pointer-events: none; */
+    cursor: context-menu; 
+}
+
 @media screen and (min-width: 600px) {
         *{
             /* color:#6c757d; */
@@ -18,19 +27,9 @@
     }
 
     #doctorImg {
-        /* 
-        -webkit-transition: -webkit-transform .2s ease-in-out;
-                transition:         transform .2s ease-in-out; */
-        animation: MoveImages 3s;
+          animation: MoveImages 3s;
     }
-    /* #doctorImg:hover {
-        -moz-transform: scaleX(-1);
-        -webkit-transform: scaleX(-1);
-        -o-transform: scaleX(-1);
-        transform: scaleX(-1);
-        -ms-filter: fliph; 
-        filter: fliph; 
-    } */
+   
 
     @keyframes MoveImages {
         0% {

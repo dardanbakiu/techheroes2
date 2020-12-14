@@ -16,9 +16,9 @@ router.get('/kycu_dhurues', (req, res) => {
 });
 
 router.post('/kycu_dhurues_form', async (req, res) => {
-    const body = req.body;
-    const email = body.kycu_dhurues_email;
-    const password = body.kycu_dhurues_pw;
+    // const body = req.body;
+    const email = req.body.kycu_dhurues_email;
+    const password = req.body.kycu_dhurues_pw;
 
     User.findAll({
         where: {
@@ -47,7 +47,8 @@ router.post('/kycu_dhurues_form', async (req, res) => {
 
         })
         .catch(err => {
-            res.render('kycu_si_dhurues', { error: "email ose password jane gabim" })
+            console.log("nuk keni mujt mu llogu")
+            res.render('kycu_si_dhurues', { error: "email/password jane gabim" })
         })
 
 

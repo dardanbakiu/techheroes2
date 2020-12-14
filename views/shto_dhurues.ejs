@@ -5,40 +5,16 @@
   <title>Dhuro gjak,shpëto jetë!</title>
   <link href="giveblood.png" rel="icon" type="image/gif">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Bootstrap4 -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-    crossorigin="anonymous"></script>
-
-  <link rel="stylesheet" href="generalStyle.css">
-  <link rel="stylesheet" href="card.css">
-  <link rel="stylesheet" href="shto.css">
-  <link rel="stylesheet" href="navAndFooter.css">
-  <!-- / Boostrap4 -->
-
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-
-  <!-- new style -->
 
   <link rel="stylesheet" href="style/forms.css">
   <link rel="stylesheet" href="style/general.css">
   <link rel="stylesheet" href="style/navbar.css">
+  <link rel="stylesheet" href="style/table.css">
 </head>
 
 <body>
-
-
   <nav>
     <div class="logo">
       <h4><img width="30" src="/img/giveblood.png" alt=""></h4>
@@ -54,7 +30,7 @@
         <a href="/depozita">Depozita</a>
       </li>
       <li>
-        <a style="color:red" href="/depozita">dil</a>
+        <a style="color:red" href="/dil">dil</a>
       </li>
     </ul>
 
@@ -67,151 +43,81 @@
 
   <script src="/scripts/app.js"></script>
 
-  <nav class="navbar navbar-expand-lg navbar navbar-light bg-light">
-    <img class="navbar-brand logo" width="5%" src="giveblood.png">
 
-    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse6">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+  <!-- Forma me shtu dhurues -->
 
-    <div class="collapse navbar-collapse" id="navbarCollapse6">
-      <div class="navbar-nav">
+  <div class="centerForm">
+    <label class="mainLabel">Shto Dhurues </label>
+    <div class="formBox marginTB ">
+      <form method="POST" action="/shto_dhurues_form">
+        <input type="text" name="shto_dhurues_emri" id="" placeholder="Emri">
+        <input type="text" name="shto_dhurues_mbiemri" id="" placeholder="Mbiemri">
 
-        <li class="nav-item dropdown active">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            Dhuruesit e gjakut
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="/shto_dhurues">Shto dhurues</a>
-            <a class="dropdown-item" href="/lista_dhuruesve">Lista e dhuruesve</a>
+        <input type="number" name="shto_dhurues_kontakti" id="" placeholder="Kontakti" required>
+        <input type="email" name="shto_dhurues_email" id="" placeholder="email" required>
+        <select name="shto_dhurues_gr_gjakut" required>
+          <option value="" disabled selected>Grupi i Gjakut</option>
+          <option value="A-">A-</option>
+          <option value="A+">A+</option>
+          <option value="B-">B-</option>
+          <option value="B+">B+</option>
+          <option value="AB-">AB-</option>
+          <option value="AB+">AB+</option>
+          <option value="O+">0-</option>
+          <option value="O+">0+</option>
+        </select>
 
-          </div>
-        </li>
+        <input type="text" name="shto_dhurues_sasia" placeholder="Sasia (ml)">
 
-        <li class="nav-item dropdown active">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            Marrësit e gjakut
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="/shto_marres">Shto marrës</a>
-            <a class="dropdown-item" href="/lista_marresve">Lista e marrësve</a>
-
-          </div>
-        </li>
-
-
-        <a href="/depozita" class="nav-item nav-link active">Depozita</a>
-
-        <form action="/shkyqu" method="POST">
-          <button class="nav-item nav-link active btn btn-light" type="submit">Dil</button>
-        </form>
-
-        <!-- Ketu mbarojne kushtet per backend dhe elementet -->
-      </div>
-
+        <input type="submit" value="Shto Dhurues">
+      </form>
     </div>
-  </nav>
 
-
-  <div class="center marginTB">
-    <form method="POST" action="/shto_dhurues_form">
-      <div class=" box card">
-        <div class="">
-
-          <div class="center"><img width="50px" src="giveblood.png"></div>
-          <h2 class="center mb-5">Shto dhurues</h2>
-
-          <div class="form-group">
-            <input type="text" placeholder="Emri" style="width: 300px;" class="form-control" id="first_name"
-              name="shto_dhurues_emri">
-          </div>
-
-          <div class="form-group">
-            <input type="text" placeholder="Mbiemri" style="width: 300px;" class="form-control" id="last_name"
-              name="shto_dhurues_mbiemri">
-          </div>
-
-          <div class="form-group">
-            <input type="text" placeholder="Email" style="width: 300px;" class="form-control" id="last_name"
-              name="shto_dhurues_email">
-          </div>
-
-
-          <!-- Forma e grupit te gjakut -->
-          <label>Grupi i Gjakut</label>
-          <div class="row">
-            <div class="col-6">
-              <div class="custom-control custom-radio">
-                <input type="radio" class="custom-control-input" value="A-" id="aNegativ" name="shto_dhurues_gr_gjakut">
-                <label class="custom-control-label" for="aNegativ">A-</label>
-              </div>
-
-
-              <div class="custom-control custom-radio">
-                <input type="radio" class="custom-control-input" value="A+" id="aPozitiv" name="shto_dhurues_gr_gjakut">
-                <label class="custom-control-label" for="aPozitiv">A+</label>
-              </div>
-
-              <div class="custom-control custom-radio">
-                <input type="radio" class="custom-control-input" value="B-" id="bNegativ" name="shto_dhurues_gr_gjakut">
-                <label class="custom-control-label" for="bNegativ">B-</label>
-              </div>
-
-              <div class="custom-control custom-radio">
-                <input type="radio" class="custom-control-input" value="B+" id="bPozitiv" name="shto_dhurues_gr_gjakut">
-                <label class="custom-control-label" for="bPozitiv">B+</label>
-              </div>
-            </div>
-            <div class="col-6">
-              <div class="custom-control custom-radio">
-                <input type="radio" class="custom-control-input" value="AB-" id="abNegativ"
-                  name="shto_dhurues_gr_gjakut">
-                <label class="custom-control-label" for="abNegativ">AB-</label>
-              </div>
-
-
-              <div class="custom-control custom-radio">
-                <input type="radio" class="custom-control-input" value="AB+" id="abPozitiv"
-                  name="shto_dhurues_gr_gjakut">
-                <label class="custom-control-label" for="abPozitiv">AB+</label>
-              </div>
-
-              <div class="custom-control custom-radio">
-                <input type="radio" class="custom-control-input" value="O-" id="zeroNegativ"
-                  name="shto_dhurues_gr_gjakut">
-                <label class="custom-control-label" for="zeroNegativ">0-</label>
-              </div>
-
-              <div class="custom-control custom-radio">
-                <input type="radio" class="custom-control-input" value="O+" id="zeroPozitiv"
-                  name="shto_dhurues_gr_gjakut">
-                <label class="custom-control-label" for="zeroPozitiv">0+</label>
-              </div>
-
-            </div>
-          </div><br>
-          <!-- / forma e grupit te gjakut -->
-
-          <div class="form-group">
-            <input type="text" style="width: 300px;" class="form-control" id="usr" name="shto_dhurues_kontakti"
-              placeholder="Kontakti">
-          </div>
-
-          <div class="form-group">
-            <!-- <label for="last_name"></label> -->
-            <input type="number" placeholder="Sasia (ml)" style="width: 300px;" class="form-control"
-              name="shto_dhurues_sasia">
-          </div>
-
-
-          <input type="Submit" value="Shto" style="width: 100px; border-radius: 16px;" class="btn-danger">
-
-        </div>
-      </div>
-    </form>
+    <div class="tableCenter">
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th scope="col ">Nr</th>
+            <th scope="col">Emri</td>
+            <th scope="col">Mbiemri</td>
+            <th scope="col">Email</td>
+            <th scope="col">Gr. i Gjakut</td>
+            <th scope="col"> Kontakti</td>
+            <th scope="col">Sasia</td>
+          </tr>
+        </thead>
+        <tbody>
+          <% for (var i=0; i < rows.length ; i++) { %>
+            <tr>
+              <th scope="row ">
+                <%= i+1 %>
+              </th>
+              <td>
+                <%= rows[i].emri %>
+              </td>
+              <td>
+                <%= rows[i].mbiemri %>
+              </td>
+              <td>
+                <%= rows[i].email %>
+              </td>
+              <td>
+                <%= rows[i].grgjakut %>
+              </td>
+              <td>
+                <%= rows[i].kontakti %>
+              </td>
+              <td>
+                <%= rows[i].sasia %> ml
+              </td>
+            </tr>
+            <% } %>
+        </tbody>
+      </table>
+    </div>
   </div>
+
+
 
   <!----------- Footer ------------>
   <%- include ('partials/footer.ejs') %>
