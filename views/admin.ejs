@@ -4,16 +4,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Admin Login</title>
+
+    <link rel="stylesheet" href="style/general.css">
+    <link rel="stylesheet" href="style/forms.css">
+    <link rel="stylesheet" href="style/navbar.css">
 </head>
 
 <body>
-    <form action="/adminLogin" method="POST">
-        <p><input type="username" name="username" id="" placeholder="username"></p>
-        <p><input type="password" name="password" id="" placeholder="password"></p>
-        <p><input type="submit"></p>
+    <nav id="nav-links">
+        <div class="logo">
+            <h4><img width="30" src="/img/giveblood.png" alt=""></h4>
+        </div>
+        <ul class="nav-links">
+            <li>
+                <a href="/">Ballina</a>
+            </li>
+        </ul>
 
-        <!-- flandra spo hin n'or -->
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    <script src="/scripts/app.js"></script>
+
+    <div class="centerForm">
+        <label class="mainLabel">Admin </label>
+        <div class="formBox marginTB ">
+            <form action="/adminLogin" method="POST">
+                <p><input type="text" name="username" id="" placeholder="username"></p>
+                <p><input type="password" name="password" id="" placeholder="password"></p>
+                <p><input type="submit" value="Kycu"></p>
+        </div>
+    </div>
+    <!-- flandra spo hin n'or -->
     </form>
 </body>
 

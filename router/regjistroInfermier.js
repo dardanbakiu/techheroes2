@@ -15,7 +15,7 @@ const transporter = nodemailer.createTransport({
 });
 
 router.get('/adminRegister', adminAuthMiddleware, (req, res) => {
-    res.render('regjistrohu_si_administrator', { error: " " });
+    res.render('regjistro_infermier', { error: " " });
 });
 
 router.post("/nurseRegister", (req, res) => {
@@ -30,7 +30,7 @@ router.post("/nurseRegister", (req, res) => {
     }).then(result => {
         if (result) {
             console.log(`nurse ekziston`)
-            res.render('regjistrohu_si_administrator', { error: "Llogaria egziston" });
+            res.render('regjistro_infermier', { error: "Llogaria egziston" });
         }
         else {
             console.log(`Ky nurse nuk egziston`)

@@ -8,13 +8,13 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <link rel="stylesheet" href="/style/navbar.css">
-  <link rel="stylesheet" href="/style/general.css">
-  <link rel="stylesheet" href="/style/profili.css">
+  <link rel="stylesheet" href="style/general.css">
+  <link rel="stylesheet" href="style/forms.css">
+  <link rel="stylesheet" href="style/navbar.css">
+
 </head>
 
 <body>
-
   <nav id="nav-links">
     <div class="logo">
       <h4><img width="30" src="/img/giveblood.png" alt=""></h4>
@@ -34,36 +34,22 @@
 
   <script src="/scripts/app.js"></script>
 
-  <div class="center animation ">
-
-    <div class="box">
-      <p><img width="100" src="https://www.searchpng.com/wp-content/uploads/2019/02/Profile-PNG-Icon.png"></p>
-      <p class="profil-name">
-        <%= emri %>
-          <%= mbiemri %>
-      </p>
-
-      <p class="profile-contact">
-        Kontakti: <span>
-          <%= kontakti %>
-        </span>
-      </p>
-
-      <p class="profile-bloodGr">
-        Grupi i gjakut: <span>
-          <%= grgjakut %>
-        </span>
-      </p>
-
-      <p class="profile-quantity">
-        Historia: <span>
-          <%= sasia %> ml
-        </span>
-      </p>
+  <div class="centerForm">
+    <label class="mainLabel">Regjistro Nje Infermier/e </label>
+    <div class="formBox marginTB ">
+      <form method="POST" action="/nurseRegister">
+        <input name="emri" type="text" placeholder="Emri dhe Mbiemri">
+        <input name="emriSpitalit" type="text" placeholder="Emri i Spitalit">
+        <input name="lokacioni" type="text" placeholder="Lokacioni">
+        <input name="email" type="email" placeholder="Email">
+        <input name="password" type="password" placeholder="Password">
+        <input type="submit" value="Regjistro">
+      </form>
     </div>
   </div>
+  </center>
 
-  <div class="distance"></div>
+  <div class="distanca"></div>
 
   <!----------- Footer ------------>
   <%- include ('partials/footer.ejs') %>
