@@ -44,49 +44,46 @@
 
   <script src="/scripts/app.js"></script>
 
+  <div class="centerForm">
+    <label class="mainLabel">Regjistrohu Si Dhurues </label>
+    <div class="formBox marginTB ">
+      <form method="POST" action="user_reg">
+        <input type="text" name="reg_user_emri" id="" placeholder="Emri">
+        <input type="text" name="reg_user_mbiemri" id="" placeholder="Mbiemri">
 
-  <%- error %>
+        <select name="reg_user_gr_gjakut" required>
+          <option value="" disabled selected>Grupi i Gjakut</option>
+          <option value="A-">A-</option>
+          <option value="A+">A+</option>
+          <option value="B-">B-</option>
+          <option value="B+">B+</option>
+          <option value="AB-">AB-</option>
+          <option value="AB+">AB+</option>
+          <option value="O+">0-</option>
+          <option value="O+">0+</option>
+        </select>
 
-    <div class="centerForm">
-      <label class="mainLabel">Regjistrohu Si Dhurues </label>
-      <div class="formBox marginTB ">
-        <form method="POST" action="user_reg">
-          <input type="text" name="reg_user_emri" id="" placeholder="Emri">
-          <input type="text" name="reg_user_mbiemri" id="" placeholder="Mbiemri">
+        <label for="ditelindja">Ditelindja</label>
+        <input type="date" name="reg_user_dtl" id="ditelindja" required>
+        <input type="number" name="reg_user_kontakti" id="" placeholder="Kontakti" required>
+        <input type="email" name="reg_user_email" id="" placeholder="email" required>
+        <input type="password" name="reg_user_password" id="" placeholder="Fjalekalimi" required>
+        <!-- <input type="password" name="" id="" placeholder="" required> -->
 
-          <select name="reg_user_gr_gjakut" required>
-            <option value="" disabled selected>Grupi i Gjakut</option>
-            <option value="A-">A-</option>
-            <option value="A+">A+</option>
-            <option value="B-">B-</option>
-            <option value="B+">B+</option>
-            <option value="AB-">AB-</option>
-            <option value="AB+">AB+</option>
-            <option value="O+">0-</option>
-            <option value="O+">0+</option>
-          </select>
+        <select name="reg_user_semundje" required>
+          <option value="" disabled selected>semundje ngjitese?</option>
+          <option value="jo">Jo</option>
+          <option value="po">Po</option>
+        </select>
 
-          <label for="ditelindja">Ditelindja</label>
-          <input type="date" name="reg_user_dtl" id="ditelindja" required>
-          <input type="number" name="reg_user_kontakti" id="" placeholder="Kontakti" required>
-          <input type="email" name="reg_user_email" id="" placeholder="email" required>
-          <input type="password" name="reg_user_password" id="" placeholder="Fjalekalimi" required>
-          <!-- <input type="password" name="" id="" placeholder="" required> -->
-
-          <select name="reg_user_semundje" required>
-            <option value="" disabled selected>semundje ngjitese?</option>
-            <option value="jo">Jo</option>
-            <option value="po">Po</option>
-          </select>
-
-          <input type="submit" value="Regjistrohu">
-        </form>
-      </div>
-      <p style="color:tomato;text-align:center;">
-        <%- error %>
-      </p>
+        <input type="submit" value="Regjistrohu">
+      </form>
     </div>
-    <%- include ('partials/footer.ejs') %>
+    <p style="color:tomato;text-align:center;">
+      <%- error %>
+    </p>
+  </div>
+  <%- include ('partials/footer.ejs') %>
 
 </body>
 

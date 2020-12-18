@@ -5,6 +5,7 @@ const User = require('../model/User')
 const { v4: uuidv4 } = require('uuid');
 const nodemailer = require('nodemailer');
 require('dotenv').config();
+const bcrypt = require('bcrypt')
 
 router.get('/regjistrohu_si_dhurues', (req, res) => {
     res.render('regjistrohu_si_dhurues', { error: " " });
@@ -13,7 +14,7 @@ router.get('/regjistrohu_si_dhurues', (req, res) => {
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: 'fitim.mehmeti00@gmail.com',
+        user: process.env.EMAIL,
         pass: process.env.EMAIL_PW
     }
 });
@@ -42,47 +43,50 @@ router.post("/user_reg", (req, res) => {
             console.log(`Ky user nuk egziston`)
 
             const uuid = uuidv4()
-
-            User.create({
-                emri: reg_user_emri,
-                mbiemri: reg_user_mbiemri,
-                ditelindja: reg_user_dtl,
-                kontakti: reg_user_kontakti,
-                email: reg_user_email,
-                password: reg_user_password,
-                grgjakut: reg_user_gr_gjakut,
-                semundje: reg_user_semundje,
-                tatoo: reg_user_tatoo,
-                verified: 'false',
-                uuid: uuid
-            })
-                .then(() => {
-                    //ketu duhet me programu me dergu ne email linkun
-
-                    const domain = process.env.DOMAIN
-
-                    const mailOptions = {
-                        from: process.env.EMAIL,
-                        to: reg_user_email,
-                        subject: 'Verifiko Llogarine - Dhuro Gjak',
-                        text: `Kliko ne kete link qe llogaria jauj te verifikohet ${domain}/verify/${uuid} `
-                    };
-
-                    transporter.sendMail(mailOptions, (error, info) => {
-                        if (error) {
-                            console.log(error);
-                        } else {
-                            console.log('Email sent: ' + info.response);
-                        }
-                    });
-
-
-                    // Ktu posht duhet me e bo qe met qu te faqja kontrollo emailin etj etj
-                    res.render('verifiko_llogarine');
+            bcrypt.hash(reg_user_password, 10, (err, hash) => {
+                if (err) console.log(err)
+                User.create({
+                    emri: reg_user_emri,
+                    mbiemri: reg_user_mbiemri,
+                    ditelindja: reg_user_dtl,
+                    kontakti: reg_user_kontakti,
+                    email: reg_user_email,
+                    password: hash,
+                    grgjakut: reg_user_gr_gjakut,
+                    semundje: reg_user_semundje,
+                    tatoo: reg_user_tatoo,
+                    verified: 'false',
+                    uuid: uuid
                 })
-                .catch(err => {
-                    res.redirect('/')
-                });
+
+                    .then(() => {
+                        //ketu duhet me programu me dergu ne email linkun
+
+                        const domain = process.env.DOMAIN
+
+                        const mailOptions = {
+                            from: process.env.EMAIL,
+                            to: reg_user_email,
+                            subject: 'Verifiko Llogarine - Dhuro Gjak',
+                            text: `Kliko ne kete link qe llogaria jauj te verifikohet ${domain}/verify/${uuid} `
+                        };
+
+                        transporter.sendMail(mailOptions, (error, info) => {
+                            if (error) {
+                                console.log(error);
+                            } else {
+                                console.log('Email sent: ' + info.response);
+                            }
+                        });
+
+
+                        // Ktu posht duhet me e bo qe met qu te faqja kontrollo emailin etj etj
+                        res.render('verifiko_llogarine');
+                    })
+                    .catch(err => {
+                        res.redirect('/')
+                    });
+            })
         }
     }).catch(err => {
         console.log(err)

@@ -20,7 +20,6 @@ const Sequelize = require("sequelize"); // Sequelize package
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 require('dotenv').config()
 
-
 const mySessionStore = new SequelizeStore({ //ktu esht errori qe spo na len mu logu me t'paren
     db: sequelize
 })

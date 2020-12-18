@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const db = require("../model/database");
 const User = require('../model/User');
-
+const bcrypt = require('bcrypt')
 
 const loginErrorStatement = {
     noerror: " ",
@@ -23,7 +23,7 @@ router.post('/kycu_dhurues_form', async (req, res) => {
     User.findAll({
         where: {
             email: email,
-            password: password
+            // password: password
         }
     })
         .then(result => {
@@ -32,23 +32,37 @@ router.post('/kycu_dhurues_form', async (req, res) => {
             const isVerified = result[0].dataValues.verified
 
             console.log(`Verifikimiiiii : ${isVerified}`)
-
-            if (dbEmail === email && dbPw === password) {
-                if (isVerified == "true") {
-                    req.session.isLoggedSession = email
-                    console.log(req.session.isLoggedSession)
-
-                    res.redirect(`/profili_dhuruesit/${email}`)
+            bcrypt.compare(password, dbPw, (err, result) => {
+                if (!result) {
+                    res.render('kycu_si_dhurues', { error: "email/password jane gabim" })
                 }
                 else {
-                    res.render('kycu_si_dhurues', { error: "Verifikoni llogarine tuaj permes emailit" })
+                    if (isVerified == "true") {
+                        req.session.isLoggedSession = email
+                        console.log(req.session.isLoggedSession)
+                        res.redirect(`/profili_dhuruesit/${email}`)
+                    }
+                    else {
+                        res.render('kycu_si_dhurues', { error: "Verifikoni llogarine tuaj permes emailit" })
+                    }
                 }
-            }
+            })
+
+            // if (dbEmail === email && dbPw === password) {
+            //     if (isVerified == "true") {
+            //         req.session.isLoggedSession = email
+            //         console.log(req.session.isLoggedSession)
+            //         res.redirect(`/profili_dhuruesit/${email}`)
+            //     }
+            //     else {
+            //         res.render('kycu_si_dhurues', { error: "Verifikoni llogarine tuaj permes emailit" })
+            //     }
+            // }
 
         })
         .catch(err => {
-            console.log("nuk keni mujt mu llogu")
-            res.render('kycu_si_dhurues', { error: "email/password jane gabim" })
+            console.log("nuk keni mujt mu llogu", err)
+            // res.render('kycu_si_dhurues', { error: "email/password jane gabim" })
         })
 
 
