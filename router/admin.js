@@ -1,18 +1,19 @@
 const express = require('express')
 const router = express.Router()
+require('dotenv').config()
 
-router.get('/aadminn', (req, res) => {
+router.get('/admin0', (req, res) => {
     res.render('admin')
 })
 
 router.post('/adminLogin', (req, res) => {
     const { username, password } = req.body
-    if (username === 'admin' && password === 'admin') {
+    if (username === process.env.ADMIN_USERNAME && password === process.env.ADMIN_PASSWORD) {
         req.session.adminIsLoggedSession = username
         res.render('regjistro_infermier')
     }
     else {
-        res.redirect('/aadminn')
+        res.render('admin')
     }
 })
 
