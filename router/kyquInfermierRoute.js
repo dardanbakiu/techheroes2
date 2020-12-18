@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Nurse = require('../model/Nurse') //modeli per tabelen Admin
 const db = require('../model/db') // lidhja me db
+const bcrypt = require('bcrypt')
 
 router.get('/infermier', (req, res) => {
     res.render('kycu_si_infermier', { error: " " });
@@ -14,7 +15,7 @@ router.post('/kycuInfermier', (req, res) => {
     Nurse.findAll({
         where: {
             email: email,
-            password: password
+            // password: password
         }
     })
         .then(result => {
@@ -22,21 +23,37 @@ router.post('/kycuInfermier', (req, res) => {
             const dbPw = result[0].dataValues.password
             const verified = result[0].dataValues.verified
 
-            if (dbEmail === email && dbPw === password) {
-                if (verified === 'true') {
-                    req.session.NurseIsLoggedSession = email
-                    console.log(req.session.NurseIsLoggedSession)
-
-                    res.redirect(`/depozita`)
+            bcrypt.compare(password, dbPw, (err, result) => {
+                if (!result) {
+                    res.render('kycu_si_infermier', { error: "email/password jane gabim" })
                 }
                 else {
-                    res.render('kycu_si_infermier', { error: "Verifikoni llogarine tuaj permes Email-it" })
-                }
-            }
+                    if (verified === 'true') {
+                        req.session.NurseIsLoggedSession = email
+                        console.log(req.session.NurseIsLoggedSession)
 
+                        res.redirect(`/depozita`)
+                    }
+                    else {
+                        res.render('kycu_si_infermier', { error: "Verifikoni llogarine tuaj permes Email-it" })
+                    }
+                }
+                // if (dbEmail === email && dbPw === password) {
+                //     if (verified === 'true') {
+                //         req.session.NurseIsLoggedSession = email
+                //         console.log(req.session.NurseIsLoggedSession)
+
+                //         res.redirect(`/depozita`)
+                //     }
+                //     else {
+                //         res.render('kycu_si_infermier', { error: "Verifikoni llogarine tuaj permes Email-it" })
+                //     }
+                // }
+            })
         })
         .catch(err => {
-            res.render('kycu_si_infermier', { error: "email/password jane gabim" })
+            console.log("nuk keni mujt mu llogu", err)
+            // res.render('kycu_si_infermier', { error: "email/password jane gabim" })
         })
 });
 

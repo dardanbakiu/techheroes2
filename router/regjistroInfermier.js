@@ -5,11 +5,12 @@ const adminAuthMiddleware = require('../middleware/adminAuthMiddleWare');
 const { v4: uuidv4 } = require('uuid');
 const nodemailer = require('nodemailer');
 require('dotenv').config();
+const bcrypt = require('bcrypt')
 
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: 'fitim.mehmeti00@gmail.com',
+        user: process.env.EMAIL,
         pass: process.env.EMAIL_PW
     }
 });
@@ -36,40 +37,43 @@ router.post("/nurseRegister", (req, res) => {
             console.log(`Ky nurse nuk egziston`)
 
             const uuid = uuidv4()
+            bcrypt.hash(password, 10, (err, hash) => {
+                if (err) console.log(err)
 
-            Nurse.create({
-                emri: emri,
-                emriSpitalit: emriSpitalit,
-                lokacioniSpitalit: lokacioni,
-                email: email,
-                password: password,
-                verified: 'false',
-                uuid: uuid
-            })
-                .then(() => {
-                    const domain = process.env.DOMAIN
-
-                    const mailOptions = {
-                        from: process.env.EMAIL,
-                        to: email,
-                        subject: 'Verifiko Admin Llogarine - Dhuro Gjak',
-                        text: `Kliko ne kete link qe llogaria jauj te verifikohet ${domain}/verify/nurse/${uuid} `
-                    };
-
-                    transporter.sendMail(mailOptions, (error, info) => {
-                        if (error) {
-                            console.log(error);
-                        } else {
-                            console.log('Email sent: ' + info.response);
-                        }
-                    });
-
-                    res.render('verifiko_llogarine');
+                Nurse.create({
+                    emri: emri,
+                    emriSpitalit: emriSpitalit,
+                    lokacioniSpitalit: lokacioni,
+                    email: email,
+                    password: hash,
+                    verified: 'false',
+                    uuid: uuid
                 })
-                .catch(err => {
-                    console.log(err)
-                    res.redirect('/')
-                });
+                    .then(() => {
+                        const domain = process.env.DOMAIN
+
+                        const mailOptions = {
+                            from: process.env.EMAIL,
+                            to: email,
+                            subject: 'Verifiko Admin Llogarine - Dhuro Gjak',
+                            text: `Kliko ne kete link qe llogaria jauj te verifikohet ${domain}/verify/nurse/${uuid} `
+                        };
+
+                        transporter.sendMail(mailOptions, (error, info) => {
+                            if (error) {
+                                console.log(error);
+                            } else {
+                                console.log('Email sent: ' + info.response);
+                            }
+                        });
+
+                        res.render('verifiko_llogarine');
+                    })
+                    .catch(err => {
+                        console.log(err)
+                        res.redirect('/')
+                    });
+            })
         }
     }).catch(err => {
         console.log(err)
