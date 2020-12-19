@@ -44,7 +44,6 @@ app.use(session({
     secret: 'keyboard cat',
     resave: false,
     saveUninitialized: true,
-    // expires: new Date(Date.now() + (5*1000))
     cookie: { maxAge: 30 * 60 * 1000 },
     store: mySessionStore,
     resave: false, // we support the touch method so per the express-session docs this should be set to false

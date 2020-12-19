@@ -11,4 +11,12 @@ router.get('/lista_dhuruesve', nurseAuthMiddleware, (req, res) => {
         })
 });
 
+router.post("/lista_dhuruesve_email", nurseAuthMiddleware, (req, res) => {
+    const email = req.body.searchDonnor
+    Donors.findAndCountAll({ order: [['updatedAt', 'DESC']], where: { email: email } })
+        .then(donor => {
+            res.render('lista_dhuruesve', { isAdded: " ", rows: donor.rows, totalRows: donor.count })
+        })
+})
+
 exports.route = router; 
