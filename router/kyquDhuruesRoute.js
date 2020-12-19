@@ -27,7 +27,7 @@ router.post('/kycu_dhurues_form', async (req, res) => {
         }
     })
         .then(result => {
-            const dbEmail = result[0].dataValues.email
+            const uuid = result[0].dataValues.uuid
             const dbPw = result[0].dataValues.password
             const isVerified = result[0].dataValues.verified
 
@@ -40,7 +40,7 @@ router.post('/kycu_dhurues_form', async (req, res) => {
                     if (isVerified == "true") {
                         req.session.isLoggedSession = email
                         console.log(req.session.isLoggedSession)
-                        res.redirect(`/profili_dhuruesit/${email}`)
+                        res.redirect(`/profili_dhuruesit/${uuid}`)
                     }
                     else {
                         res.render('kycu_si_dhurues', { error: "Verifikoni llogarine tuaj permes emailit" })

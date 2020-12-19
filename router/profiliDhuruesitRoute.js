@@ -6,11 +6,11 @@ const Donor = require('../model/Donors')
 const Sequelize = require('sequelize')
 
 
-router.get('/profili_dhuruesit/:email', userAuthMiddleware, (req, res) => {
-    const emailParameter = req.params.email
+router.get('/profili_dhuruesit/:uuid', userAuthMiddleware, (req, res) => {
+    const uuidParameter = req.params.uuid
     User.findOne({
         where: {
-            email: emailParameter
+            uuid: uuidParameter
         }
     })
         .then(user => {
@@ -27,23 +27,23 @@ router.get('/profili_dhuruesit/:email', userAuthMiddleware, (req, res) => {
                 }
             }).then(result => {
                 let { sasia } = result.dataValues
-                if(!sasia) {
+                if (!sasia) {
                     sasia = 0
                 }
-                res.render('profili_dhuruesit',{
-                    emri:emri,
-                    mbiemri:mbiemri,
-                    kontakti:kontakti,
-                    grgjakut:grgjakut,
-                    sasia:sasia
+                res.render('profili_dhuruesit', {
+                    emri: emri,
+                    mbiemri: mbiemri,
+                    kontakti: kontakti,
+                    grgjakut: grgjakut,
+                    sasia: sasia
                 });
-            }).catch(err=>{
-                res.render('profili_dhuruesit',{
-                    emri:emri,
-                    mbiemri:mbiemri,
-                    kontakti:kontakti,
-                    grgjakut:grgjakut,
-                    sasia:0
+            }).catch(err => {
+                res.render('profili_dhuruesit', {
+                    emri: emri,
+                    mbiemri: mbiemri,
+                    kontakti: kontakti,
+                    grgjakut: grgjakut,
+                    sasia: 0
                 });
             })
 

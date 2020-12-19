@@ -8,7 +8,7 @@ window.addEventListener('load', (event) => {
         seconds = seconds - 1
         document.getElementById('seconds').innerHTML = seconds
         if (seconds <= 0) {
-            window.location.href = "http://localhost:3000/";
+            window.location.href = document.location.href = "/";
         }
     }, 1000)
 
