@@ -7,10 +7,10 @@ const Deposits = require('../model/Deposits')
 const nurseAuthMiddleware = require('../middleware/nurseAuthMiddleWare');
 
 router.get('/shto_dhurues', nurseAuthMiddleware, (req, res) => {
-    // res.render('shto_dhurues', { isAdded: " " });
-    Donors.findAll()
+
+    Donors.findAndCountAll({ limit: 5, order: [['updatedAt', 'DESC']] })
         .then(donor => {
-            res.render('shto_dhurues', { isAdded: " ", rows: donor })
+            res.render('shto_dhurues', { isAdded: " ", rows: donor.rows, totalRows: donor.count })
         })
 });
 
@@ -136,9 +136,13 @@ router.post('/shto_dhurues_form', async (req, res) => {
             }
         })
         .then(() => {
-            res.render('shto_dhurues', { isAdded: "U shtua me sukses" });
+            Donors.findAndCountAll({ limit: 5, order: [['updatedAt', 'DESC']] })
+                .then(donor => {
+                    res.render('shto_dhurues', { isAdded: " ", rows: donor.rows, totalRows: donor.count })
+                })
         })
         .catch(err => console.log(err))
 });
 
-exports.route = router; 
+exports.route = router;
+

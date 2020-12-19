@@ -62,7 +62,7 @@ router.post('/kycu_dhurues_form', async (req, res) => {
         })
         .catch(err => {
             console.log("nuk keni mujt mu llogu", err)
-            // res.render('kycu_si_dhurues', { error: "email/password jane gabim" })
+            res.render('kycu_si_dhurues', { error: "email/password jane gabim" })
         })
 
 

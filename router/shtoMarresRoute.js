@@ -6,9 +6,9 @@ const Deposits = require('../model/Deposits')
 const nurseAuthMiddleware = require('../middleware/nurseAuthMiddleWare');
 
 router.get('/shto_marres', nurseAuthMiddleware, (req, res) => {
-    Receivers.findAll()
+    Receivers.findAndCountAll({ limit: 5, order: [['updatedAt', 'DESC']] })
         .then(receiver => {
-            res.render('shto_marres', { isAdded: " ", rows: receiver });
+            res.render('shto_marres', { isAdded: " ", rows: receiver.rows, totalRows: receiver.count })
         })
 
 });
@@ -134,9 +134,9 @@ router.post('/shto_marres_form', (req, res) => {
             }
         })
         .then(() => {
-            Receivers.findAll()
+            Receivers.findAndCountAll({ limit: 5, order: [['updatedAt', 'DESC']] })
                 .then(receiver => {
-                    res.render('shto_marres', { isAdded: "U shtua me sukses", rows: receiver });
+                    res.render('shto_marres', { isAdded: " ", rows: receiver.rows, totalRows: receiver.count })
                 })
         })
         .catch(err => console.log(err))

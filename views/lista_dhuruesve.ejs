@@ -5,87 +5,50 @@
   <title>Dhuro gjak,shpëto jetë!</title>
   <link href="giveblood.png" rel="icon" type="image/gif">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Bootstrap4 -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-    crossorigin="anonymous"></script>
-
-  <link rel="stylesheet" href="generalStyle.css">
-  <link rel="stylesheet" href="card.css">
-  <link rel="stylesheet" href="shto.css">
-  <!-- / Boostrap4 -->
-  <link rel="stylesheet" href="navAndFooter.css">
-  <link href="style.css" rel="stylesheet" />
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-
+  <link rel="stylesheet" href="style/forms.css">
+  <link rel="stylesheet" href="style/general.css">
+  <link rel="stylesheet" href="style/navbar.css">
+  <link rel="stylesheet" href="style/table.css">
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar navbar-light bg-light">
-    <img class="navbar-brand logo" width="5%" src="giveblood.png">
+  <nav>
+    <div class="logo">
+      <h4><img width="30" src="/img/giveblood.png" alt=""></h4>
+    </div>
+    <ul class="nav-links" id="nav-links">
+      <li>
+        <a href="/shto_dhurues">Dhuruesit</a>
+      </li>
+      <li>
+        <a href="/shto_marres">Marrësit</a>
+      </li>
+      <li>
+        <a href="/depozita">Depozita</a>
+      </li>
+      <li>
+        <a style="color:red" href="/dil">dil</a>
+      </li>
+    </ul>
 
-    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse6">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarCollapse6">
-      <div class="navbar-nav">
-
-        <li class="nav-item dropdown active">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            Dhuruesit e gjakut
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="/shto_dhurues">Shto dhurues</a>
-            <a class="dropdown-item" href="/lista_dhuruesve">Lista e dhuruesve</a>
-
-          </div>
-        </li>
-
-        <li class="nav-item dropdown active">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            Marrësit e gjakut
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="/shto_marres">Shto marrës</a>
-            <a class="dropdown-item" href="/lista_marresve">Lista e marrësve</a>
-
-          </div>
-        </li>
-
-
-        <a href="/depozita" class="nav-item nav-link active">Depozita</a>
-
-        <form action="/shkyqu" method="POST">
-          <button class="nav-item nav-link active btn btn-light" type="submit">Dil</button>
-        </form>
-
-        <!-- Ketu mbarojne kushtet per backend dhe elementet -->
-      </div>
-
+    <div class="burger">
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
     </div>
   </nav>
 
+  <script src="/scripts/app.js"></script>
 
-  <div class="extraMarginTB">
-    <div class="title center">
-      <h2>Lista e dhuruesve të gjakut </h2>
-    </div><br><br>
-    <div class="container center">
-      <table class="table table-striped">
+
+  <!-- Forma me shtu dhurues -->
+
+  <div class="centerForm">
+    <div class="tableCenter">
+      <table class="styled-table">
         <thead>
           <tr>
             <th scope="col ">Nr</th>
@@ -122,15 +85,11 @@
                 <%= rows[i].sasia %> ml
               </td>
             </tr>
-
             <% } %>
         </tbody>
       </table>
     </div>
   </div>
-
-
-
 
 
 

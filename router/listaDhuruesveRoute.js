@@ -5,9 +5,9 @@ const Donors = require('../model/Donors')
 const nurseAuthMiddleware = require('../middleware/nurseAuthMiddleWare');
 
 router.get('/lista_dhuruesve', nurseAuthMiddleware, (req, res) => {
-    Donors.findAll()
+    Donors.findAndCountAll({ order: [['updatedAt', 'DESC']] })
         .then(donor => {
-            res.render('lista_dhuruesve', { rows: donor })
+            res.render('lista_dhuruesve', { isAdded: " ", rows: donor.rows, totalRows: donor.count })
         })
 });
 

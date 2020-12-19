@@ -4,9 +4,9 @@ const Receivers = require('../model/Receivers')
 const nurseAuthMiddleware = require('../middleware/nurseAuthMiddleWare');
 
 router.get('/lista_marresve', nurseAuthMiddleware, (req, res) => {
-    Receivers.findAll()
+    Receivers.findAndCountAll({ order: [['updatedAt', 'DESC']] })
         .then(receiver => {
-            res.render('lista_marresve', { rows: receiver })
+            res.render('lista_marresve', { isAdded: " ", rows: receiver.rows, totalRows: receiver.count })
         })
 
 });

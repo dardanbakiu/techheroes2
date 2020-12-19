@@ -53,7 +53,7 @@ router.post('/kycuInfermier', (req, res) => {
         })
         .catch(err => {
             console.log("nuk keni mujt mu llogu", err)
-            // res.render('kycu_si_infermier', { error: "email/password jane gabim" })
+            res.render('kycu_si_infermier', { error: "email/password jane gabim" })
         })
 });
 
