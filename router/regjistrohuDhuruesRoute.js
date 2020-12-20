@@ -113,5 +113,13 @@ router.get('/verify/:uuid', (req, res) => {
 
 })
 
+router.get('/verifiko', (req, res) => {
+    res.render('verifiko_llogarine');
+})
+
+router.get('/verified', (req, res) => {
+    res.render("llogaria_u_verifikua")
+})
+
 
 exports.route = router;

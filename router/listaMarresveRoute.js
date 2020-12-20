@@ -12,9 +12,13 @@ router.get('/lista_marresve', nurseAuthMiddleware, (req, res) => {
 });
 
 router.post("/lista_marresve_email", nurseAuthMiddleware, (req, res) => {
-    const emriMbiemri = req.body.searchDonnor
+    let emriMbiemri = req.body.searchDonnor
+
+    emriMbiemri = emriMbiemri.replace(/ {2,}/g, ' ');
+    console.log(emriMbiemri)
     const emriMbiemriSplit = emriMbiemri.split(' ')
-    console.log(emriMbiemriSplit)
+
+    // console.log(emriMbiemriSplit)
 
     const emri = emriMbiemriSplit[0]
     const mbiemri = emriMbiemriSplit[1]

@@ -32,21 +32,22 @@ router.post('/kycu_dhurues_form', async (req, res) => {
             const isVerified = result[0].dataValues.verified
 
             console.log(`Verifikimiiiii : ${isVerified}`)
-            bcrypt.compare(password, dbPw, (err, result) => {
-                if (!result) {
-                    res.render('kycu_si_dhurues', { error: "email/password jane gabim" })
+            const match = bcrypt.compareSync(password, dbPw);
+            // bcrypt.compare(password, dbPw, (err, result) => {
+            if (!match) {
+                res.render('kycu_si_dhurues', { error: "email/password jane gabim" })
+            }
+            else {
+                if (isVerified == "true") {
+                    req.session.isLoggedSession = email
+                    console.log(req.session.isLoggedSession)
+                    res.redirect(`/profili_dhuruesit/${uuid}`)
                 }
                 else {
-                    if (isVerified == "true") {
-                        req.session.isLoggedSession = email
-                        console.log(req.session.isLoggedSession)
-                        res.redirect(`/profili_dhuruesit/${uuid}`)
-                    }
-                    else {
-                        res.render('kycu_si_dhurues', { error: "Verifikoni llogarine tuaj permes emailit" })
-                    }
+                    res.render('kycu_si_dhurues', { error: "Verifikoni llogarine tuaj permes emailit" })
                 }
-            })
+            }
+            // })
 
             // if (dbEmail === email && dbPw === password) {
             //     if (isVerified == "true") {
