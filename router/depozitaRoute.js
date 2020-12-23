@@ -42,47 +42,6 @@ router.get('/depozita',nurseAuthMiddleware, (req, res) => {
           });
         })
 
-
-     // db.query("select * from deposits", (err, rows, fields) => {
-     //      if (err) throw err
-
-     //      let AnegativElementet = 0;
-     //      let ApozitivElementet = 0;
-     //      let BpozitivElementet = 0;
-     //      let BnegativElementet = 0;
-     //      let ABpozitivElementet = 0;
-     //      let ABnegativElementet = 0;
-     //      let OpozitivElementet = 0;
-     //      let OnegativElementet = 0;
-
-     //      for (i = 0; i < rows.length; i++) {
-
-     //           AnegativElementet += rows[i].Anegativ;
-     //           ApozitivElementet += rows[i].Apozitiv;
-     //           BpozitivElementet += rows[i].Bpozitiv;
-     //           BnegativElementet += rows[i].Bnegativ;
-     //           ABpozitivElementet += rows[i].ABpozitiv;
-     //           ABnegativElementet += rows[i].ABnegativ;
-     //           OpozitivElementet += rows[i].Opozitiv;
-     //           OnegativElementet += rows[i].Onegativ;
-
-     //      }
-     //      res.render("depozita", {
-     //           Anegativ: AnegativElementet,
-     //           Apozitiv: ApozitivElementet,
-     //           Bpozitiv: BpozitivElementet,
-     //           Bnegativ: BnegativElementet,
-     //           ABnegativ: ABnegativElementet,
-     //           ABpozitiv: ABpozitivElementet,
-     //           Onegativ: OnegativElementet,
-     //           Opozitiv: OpozitivElementet
-     //      });
-     // });
-
 });
-
-
-
-// });
 
 exports.route = router;

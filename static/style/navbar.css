@@ -17,6 +17,7 @@ nav{
     background-color: #dfdfdf;
     font-family:'Roboto','Monsterrat', 'Poppins' , sans-serif;
     text-transform: uppercase;
+    overflow-x:hidden;
 }
 .logo{
     color: rgb(226, 226, 226);
