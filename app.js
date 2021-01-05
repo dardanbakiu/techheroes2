@@ -70,6 +70,9 @@ app.use('/', kyquDhuruesRoute.route);
 app.use('/', shtoDhuruesRoute.route);
 app.use('/', shtoMarresRoute.route);
 
+app.use(function (req, res) {
+    res.status(404).render('404');
+});
 
 const port = 3000
 sequelize.sync()

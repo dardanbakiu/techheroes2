@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="shortcut icon" href="/img/giveblood.png">
+
+    <link rel="stylesheet" href="style/general.css">
+    <link rel="stylesheet" href="style/verifikoLlogarine.css">
+</head>
+
+<body>
+    <div class="main">
+        <h1 class="text">Error</h1>
+        <p class="text" style="color:tomato">404</p>
+
+        <p class="second-text" id="seconds">3</p>
+    </div>
+
+    <script>
+        let seconds = 3
+        setInterval(() => {
+            seconds = seconds - 1
+            document.getElementById('seconds').innerHTML = seconds
+            if (seconds <= 0) {
+                window.location.href = document.location.href = "/";
+            }
+        }, 1000)
+    </script>
+
+</body>
+
+</html>
