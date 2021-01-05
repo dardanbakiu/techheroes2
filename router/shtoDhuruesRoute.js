@@ -138,7 +138,7 @@ router.post('/shto_dhurues_form', async (req, res) => {
         .then(() => {
             Donors.findAndCountAll({ limit: 5, order: [['updatedAt', 'DESC']] })
                 .then(donor => {
-                    res.render('shto_dhurues', { isAdded: " ", rows: donor.rows, totalRows: donor.count })
+                    res.render('shto_dhurues', { isAdded: "U shtua ne databaz", rows: donor.rows, totalRows: donor.count })
                 })
         })
         .catch(err => console.log(err))

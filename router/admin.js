@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 require('dotenv').config()
 
-router.get('/admin0', (req, res) => {
+router.get('/adminuser', (req, res) => {
     res.render('admin')
 })
 

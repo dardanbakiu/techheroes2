@@ -105,7 +105,7 @@ router.get('/verify/:uuid', (req, res) => {
     })
         .then(result => {
             // ktu duhet me e ba nje faqe ne front end qe llogaria u verifikua me sukses
-            res.render("llogaria_u_verifikua")
+            res.redirect('/verified')
         })
         .catch(err => {
             console.log(err)
