@@ -31,7 +31,7 @@
         <a href="/depozita">Depozita</a>
       </li>
       <li>
-        <a style="color:red" href="/dil">dil</a>
+        <a style="color:red" href="/dil">Dil</a>
       </li>
     </ul>
 
@@ -48,16 +48,16 @@
   <!-- Forma me shtu dhurues -->
 
   <div class="centerForm">
-    <label class="mainLabel">Shto Dhurues </label>
+    <label class="mainLabel">Shto dhurues </label>
     <div class="formBox marginTB ">
       <form method="POST" action="/shto_dhurues_form">
         <input type="text" name="shto_dhurues_emri" id="" placeholder="Emri">
         <input type="text" name="shto_dhurues_mbiemri" id="" placeholder="Mbiemri">
 
         <input type="number" name="shto_dhurues_kontakti" id="" placeholder="Kontakti" required>
-        <input type="email" name="shto_dhurues_email" id="" placeholder="email" required>
+        <input type="email" name="shto_dhurues_email" id="" placeholder="Email" required>
         <select name="shto_dhurues_gr_gjakut" required>
-          <option value="" disabled selected>Grupi i Gjakut</option>
+          <option value="" disabled selected>Grupi i gjakut</option>
           <option value="A-">A-</option>
           <option value="A+">A+</option>
           <option value="B-">B-</option>
@@ -70,7 +70,7 @@
 
         <input type="text" name="shto_dhurues_sasia" placeholder="Sasia (ml)">
 
-        <input type="submit" value="Shto Dhurues">
+        <input type="submit" value="Shto dhurues">
       </form>
       <p style="text-align: center; color : tomato;">
         <%- isAdded %>
@@ -85,7 +85,7 @@
             <th scope="col">Emri</td>
             <th scope="col">Mbiemri</td>
             <th scope="col">Email</td>
-            <th scope="col">Gr. i Gjakut</td>
+            <th scope="col">Gr. i gjakut</td>
             <th scope="col"> Kontakti</td>
             <th scope="col">Sasia</td>
           </tr>
@@ -120,7 +120,7 @@
       </table>
     </div>
     <p style="text-align:center;">
-      Totali i dhuruesve te gjakut : <%- totalRows %> <a href="/lista_dhuruesve">Shiko Me shume...</a>
+      Totali i dhuruesve të gjakut : <%- totalRows %> <a href="/lista_dhuruesve">Shiko më shumë...</a>
     </p>
   </div>
 

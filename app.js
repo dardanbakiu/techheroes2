@@ -74,7 +74,9 @@ app.use(function (req, res) {
     res.status(404).render('404');
 });
 
-const port = 3000
+
+
+const port = process.env.PORT || 3000
 sequelize.sync()
     .then(result => {
         app.listen(port)
